@@ -9,7 +9,7 @@ class ImageObject
         Scalar lThresh;
         Mat kernel;
     public:
-        ImageObject(Scalar uThresh,Scalar lThresh,Mat kernel)
+        ImageObject(Scalar lThresh,Scalar uThresh,Mat kernel)
         {
             this->uThresh=uThresh;
             this->lThresh=lThresh;

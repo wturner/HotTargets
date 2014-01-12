@@ -12,47 +12,42 @@ using namespace cv;
 class ImageGateway:
 public Observable<Mat>
 {
-    private:
-        Mat image;
-        vector < Observer<Mat>* > observers;
-        static void update_observer(Observer<Mat>* obs, Mat image)
-        {
-            obs->update(image,callback_function);
-        }
-        static void callback_function()
-        {
-            cout<<"Done with image"<<endl;
-        }
     public:
-        void setImage(Mat image)
+        void set_image(Mat image)
         {
-            this->image=image;
-            notifyObservers();
+            this->image_=image;
+            notify_observers();
         }
 
-
-        void notifyObservers()
+        void notify_observers()
         {
-            thread processes [observers.size()];
             for(int i=0;i<observers.size();++i)
-            {
-                Observer<Mat>* o = observers[i];
-                processes[i]=thread (&ImageGateway::update_observer,o,image);
-            }
-            for(int i=0;i<observers.size();++i)
-            {
-                processes[i].join();
-            }
+                thread (&ImageGateway::update_observer,observers[i],image_).join();
         }
 
-        void addObserver(Observer<Mat>* o)
+        void add_observer(Observer<Mat>* o)
         {
             observers.push_back(o);
         }
 
-        void removeObserver(Observer<Mat>* o)
+        void remove_observer(Observer<Mat>* o)
         {
             observers.erase(remove(observers.begin(),observers.end(),o));
+        }
+
+        static void update_observer(Observer<Mat>* obs, Mat image)
+        {
+            obs->update(image,callback_function);
+        }
+
+    private:
+        Mat image_;
+
+        vector < Observer<Mat>* > observers;
+
+        static void callback_function()
+        {
+            cout<<"Done with image"<<endl;
         }
 };
 #endif

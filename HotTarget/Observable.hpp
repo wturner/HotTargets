@@ -5,8 +5,8 @@ template<class E>
 class Observable
 {
     public:
-        virtual void addObserver(Observer<E>* o)=0;
-        virtual void notifyObservers()=0;
-        virtual void removeObserver(Observer<E>* o)=0;
+        virtual void add_observer(Observer<E>* o)=0;
+        virtual void notify_observers()=0;
+        virtual void remove_observer(Observer<E>* o)=0;
 };
 #endif

@@ -13,78 +13,49 @@ class ImageAnalyzer:
 public Observer<Mat>
 {
     private:
-        Mat kernel;
-        Mat image;
-        Scalar lowerThreshold;
-        Scalar upperThreshold;
-        Mat get_sync()
-        {
-            while(updating){}
-            return image;
-        }
-    protected:
-        bool updating;
-        void setImage(Mat image)
-        {
-            this->image=image;
-        }
-    public:
+        ImageAnalyzer(const ImageAnalyzer&);
+        void operator=(const ImageAnalyzer&);
 
-        void update(Mat arg, void (*function)())
+        Mat image_;
+        ImageObject* object_;
+        bool updating_=false;
+
+        Mat run_checked_filter(const Mat image,ImageObject* obj);
+
+        void wait_for_modification_end()
         {
-            Mat image = arg;
-            runFilter(image);
+            while(updating_){};
+        }
+
+        void set_image(const Mat image)
+        {
+            this->image_=image;
+        }
+
+    public:
+        ImageAnalyzer(){};
+        void update(const Mat arg, void (*function)())
+        {
+            run_filter(arg);
             function();
         }
        
-        void runFilter(Mat image);
-
-        Mat getImage()
+        void run_filter(const Mat image)
         {
-            if(!updating)
-                return image;
-            else
-                thread(get_sync);
-
+            updating_=true;
+            set_image(run_checked_filter(image,this->object_));
+            updating_=!updating_;
         }
 
-        void setObject(ImageObject* obj)
+        Mat get_image()
         {
-            setKernel(obj->getKernel());
-            setLowerThreshold(obj->getUThresh());
-            setUpperThreshold(obj->getLThresh());
+            if(updating_) thread(&ImageAnalyzer::wait_for_modification_end,this).join();
+            return image_;
         }
 
-        void setKernel(Mat kernel)
+        void set_object(ImageObject* obj)
         {
-            this->kernel = kernel;
+            this->object_=obj;
         }
-
-        Mat getKernel()
-        {
-            return kernel;
-        }
-
-        void setUpperThreshold(Scalar uThresh)
-        {
-            upperThreshold=uThresh;
-        }
-
-        Scalar getUpperThreshold()
-        {
-            return upperThreshold;
-        }
-
-        void setLowerThreshold(Scalar lThresh)
-        {
-            lowerThreshold=lThresh;
-        }
-
-        Scalar getLowerThreshhold()
-        {
-            return lowerThreshold;
-        }
-
-
 };
 #endif
