@@ -15,12 +15,12 @@ public ImageObject
             getStructuringElement(MORPH_ELLIPSE,Size(15,15), 
             Point(0,0))){}
 
-        double calculateArea(double width, double height)
+        double calculate_area(double width, double height)
         {
             int avgRadius = (width/2+height/2)/2;
-            return avgRadius*avgRadius*3.14159265*.8;
+            return avgRadius*avgRadius*3.14159265;
         }
-        double areaThreshold()
+        double area_threshold()
         {
             return AREA_THRESHOLD+40; 
         }
@@ -28,7 +28,7 @@ public ImageObject
         {
             return 1.;
         }
-        double ratioThreshold()
+        double ratio_threshold()
         {
             return RATIO_THRESHOLD+40;
         }
@@ -47,32 +47,47 @@ public Ball
 {
     public:
         BlueBall() :
-            Ball(Scalar(60,20,0,0),Scalar(255,100,140,255)){}
+            Ball(Scalar(60,10,0,0),Scalar(255,130,140,255)){}
 };
 
-class HorizHotTarget:
+class HotTarget:
 public ImageObject
 {
     private:
-        const double RATIO = 23.5/4;
+        double ratio_;
     public:
-        HorizHotTarget() : ImageObject(Scalar(0,60,0,0),Scalar(255,255,10,255),Mat::ones(5,5,CV_8U)){};
-        double calculateArea(double width, double height)
+        HotTarget(double ratio) : ImageObject(Scalar(0,60,0,0),Scalar(255,255,10,255),Mat::ones(5,5,CV_8U))
+        {
+            this->ratio_=ratio;
+        };
+        double calculate_area(double width, double height)
         {
             return width*height;
         }
-        double areaThreshold()
+        double area_threshold()
         {
             return AREA_THRESHOLD; 
         }
         double ratio()
         {
-            return RATIO;
+            return ratio_;
         }
-        double ratioThreshold()
+        double ratio_threshold()
         {
             return RATIO_THRESHOLD;
         }
 };
 
+class HorizHotTarget:
+public HotTarget
+{
+    public:
+        HorizHotTarget() : HotTarget(23.5/4){};
+};
+class VertHotTarget:
+public HotTarget
+{
+    public:
+        VertHotTarget() : HotTarget(4/32.){};
+};
 #endif

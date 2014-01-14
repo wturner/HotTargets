@@ -20,7 +20,7 @@ public Observer<Mat>
         ImageObject* object_;
         bool updating_=false;
 
-        Mat run_checked_filter(const Mat image,ImageObject* obj);
+        Mat run_checked_filter(Mat image,ImageObject* obj);
 
         void wait_for_modification_end()
         {
@@ -33,8 +33,11 @@ public Observer<Mat>
         }
 
     public:
-        ImageAnalyzer(){};
-        void update(const Mat arg, void (*function)())
+        ImageAnalyzer(ImageObject* object)
+        {
+            this->object_=object;
+        }
+        void update(Mat arg, void (*function)())
         {
             run_filter(arg);
             function();
@@ -44,7 +47,7 @@ public Observer<Mat>
         {
             updating_=true;
             set_image(run_checked_filter(image,this->object_));
-            updating_=!updating_;
+            updating_=false;
         }
 
         Mat get_image()

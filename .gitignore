@@ -4,3 +4,4 @@
 *.out
 CMake*
 cmake*
+Makefile

@@ -5,35 +5,35 @@ using namespace cv;
 class ImageObject
 {
     private:
-        Scalar uThresh;
-        Scalar lThresh;
-        Mat kernel;
+        Scalar upper_threshold_;
+        Scalar lower_threshold_;
+        Mat kernel_;
     public:
-        ImageObject(Scalar lThresh,Scalar uThresh,Mat kernel)
+        ImageObject(Scalar lower_threshold,Scalar upper_threshold,Mat kernel)
         {
-            this->uThresh=uThresh;
-            this->lThresh=lThresh;
-            this->kernel=kernel;
+            this->upper_threshold_=upper_threshold;
+            this->lower_threshold_=lower_threshold;
+            this->kernel_=kernel;
         }
 
         virtual double ratio()=0;
-        virtual double calculateArea(double width,double height)=0;
-        virtual double areaThreshold()=0;
-        virtual double ratioThreshold()=0;
+        virtual double calculate_area(double width,double height)=0;
+        virtual double area_threshold()=0;
+        virtual double ratio_threshold()=0;
 
-        Scalar getUThresh()
+        Scalar get_upper_threshold()
         {
-            return uThresh;
+            return upper_threshold_;
         }
 
-        Scalar getLThresh()
+        Scalar get_lower_threshold()
         {
-            return lThresh;
+            return lower_threshold_;
         }
 
-        Mat getKernel()
+        Mat get_kernel()
         {
-            return kernel;
+            return kernel_;
         }
 };
 #endif

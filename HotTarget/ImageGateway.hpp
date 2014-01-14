@@ -21,8 +21,11 @@ public Observable<Mat>
 
         void notify_observers()
         {
+            thread processes [observers.size()];
             for(int i=0;i<observers.size();++i)
-                thread (&ImageGateway::update_observer,observers[i],image_).join();
+                processes[i] = thread (&ImageGateway::update_observer,observers[i],image_);
+            for(int i=0;i<observers.size();++i)
+                processes[i].join();
         }
 
         void add_observer(Observer<Mat>* o)

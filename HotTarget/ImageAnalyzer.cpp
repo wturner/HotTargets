@@ -20,11 +20,12 @@ Mat erase_contours (ImageAndContours features);
 
 Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
 {
+    cout << obj->get_lower_threshold()<<endl;
     return dilate_image(
         erase_contours(
         run_contour_search(
         erode_image(
-        threshold_over_range(image,obj->getLThresh(),obj->getUThresh()),obj->getKernel()))),obj->getKernel());
+        threshold_over_range(image.clone(),obj->get_lower_threshold(),obj->get_upper_threshold()),obj->get_kernel()))),obj->get_kernel());
 }
 Mat threshold_over_range(Mat image,Scalar lower,Scalar upper)
 {

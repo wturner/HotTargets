@@ -9,86 +9,79 @@
 using namespace cv;
 using namespace std;
 
+struct Score
+{
+    double area_score;
+    double ratio_score;
+    Point position;
+};
+
 class ScoreAnalyzer:
 public Observer<Mat>
 {
     public:
-        struct Score;
-    private:
-        vector<Score> scores;
-        vector< vector<Point> > contours;
-        ImageObject* object;
-        Mat image;
-
-        static double calculateAreaScore(ImageObject* obj,Rect bound, vector<Point> contour)
-        {
-            double virtualArea = obj->calculateArea(bound.width,bound.height);
-            double actualArea = contourArea(contour);
-            return actualArea>virtualArea ? (virtualArea/actualArea)*100 : (actualArea/virtualArea)*100;
-        }
-
-        static double calculateRatioScore(ImageObject* obj, Rect bound, vector<Point> contour)
-        {
-            double virtualRatio = obj->ratio();
-            double actualRatio = (double)bound.width/(double)bound.height;
-            return actualRatio>virtualRatio ? (virtualRatio/actualRatio) *100 : (actualRatio/virtualRatio) * 100;
-        }
-
-    public:
 
         ScoreAnalyzer(ImageObject* object)
         {
-            this->object=object;
+            this->object_=object;
         }
 
-        struct Score
-        {
-            double areaScore;
-            double ratioScore;
-            Point position;
-        };
 
-        vector<Score> getScores()
+        vector<Score> get_scores()
         {
-            return scores;
+            return scores_;
         }
 
-        Mat getImage()
+        bool verify_area_score(Score container, Rect bounds,vector<Point> contour)
         {
-            return image;
+            container.area_score=calculate_area_score(this->object_,bounds,contourArea(contour));
+            return container.area_score>object_->area_threshold();
         }
 
-        void calculateScores(Mat image)
+        bool verify_ratio_score(Score container, Rect bounds)
+        {
+            container.ratio_score=calculate_ratio_score(this->object_,bounds);
+            return container.ratio_score>object_->ratio_threshold();
+        }
+
+        void calculate_scores(Mat image)
         {
             vector<Vec4i> hierarchy;
-            Mat dst=image.clone();
-            findContours(dst,this->contours,hierarchy,CV_RETR_EXTERNAL,CV_CHAIN_APPROX_SIMPLE, Point(0,0) );
+            vector< vector<Point> > contours;
+            findContours(image,contours,hierarchy,CV_RETR_TREE,CV_CHAIN_APPROX_SIMPLE, Point(0,0) );
+            cout<<"Contours"<<endl;
             for(int i=0;i<contours.size();++i)
             {
-                Score score;
-                drawContours(dst,contours,i,Scalar(255,255,255),CV_FILLED);
-                Rect bound = boundingRect(contours[i]);
-                double areaScore = calculateAreaScore(object,bound,contours[i]);
-                if(areaScore > object->areaThreshold())
-                    score.areaScore = areaScore;
-                else
-                    continue;
-                double ratioScore = calculateRatioScore(object,bound,contours[i]);
-                if(ratioScore > object->ratioThreshold())
-                    score.ratioScore = ratioScore;
-                else
-                    continue;
-                score.position = contours[i][0];
-                cout<<score.position.x<<","<<score.position.y<<endl;
-                scores.push_back(score); 
+                Score current_contour_score;
+                bool valid_area, valid_ratio;
+                Rect score_info= boundingRect(contours[i]);
+                valid_area = verify_area_score(current_contour_score,score_info,contours[i]);
+                valid_ratio = verify_ratio_score(current_contour_score,score_info);
+                if(valid_area && valid_ratio)
+                    scores_.push_back(current_contour_score);
             }
-            this->image = dst;
         }
 
         void update(Mat image, void (*function)())
         {
-            calculateScores(image);
+            calculate_scores(image);
             function();
+        }
+    private:
+        vector<Score> scores_;
+        ImageObject* object_;
+
+        static double calculate_area_score(ImageObject* obj,Rect bound, int area)
+        {
+            double virtual_area = obj->calculate_area(bound.width,bound.height);
+            return area>virtual_area ? (virtual_area/area)*100 : (area/virtual_area)*100;
+        }
+
+        static double calculate_ratio_score(ImageObject* obj, Rect bound)
+        {
+            double virtualRatio = obj->ratio();
+            double actualRatio = (double)bound.width/(double)bound.height;
+            return actualRatio>virtualRatio ? (virtualRatio/actualRatio) *100 : (actualRatio/virtualRatio) * 100;
         }
 };
 #endif
