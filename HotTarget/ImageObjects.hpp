@@ -33,21 +33,21 @@ public ImageObject
             return RATIO_THRESHOLD+40;
         }
 };
+
 class RedBall:
 public Ball
 {
     public:
         RedBall() :
-            Ball(Scalar(0,0,60,0),Scalar(140,80,255,255)){}
+            Ball(Scalar(0,0,70,0),Scalar(100,100,255,255)){}
 };
-
 
 class BlueBall:
 public Ball
 {
     public:
         BlueBall() :
-            Ball(Scalar(60,10,0,0),Scalar(255,130,140,255)){}
+            Ball(Scalar(60,10,0,0),Scalar(255,170,130,255)){}
 };
 
 class HotTarget:
@@ -84,6 +84,7 @@ public HotTarget
     public:
         HorizHotTarget() : HotTarget(23.5/4){};
 };
+
 class VertHotTarget:
 public HotTarget
 {

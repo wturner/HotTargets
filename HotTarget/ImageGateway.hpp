@@ -21,21 +21,21 @@ public Observable<Mat>
 
         void notify_observers()
         {
-            thread processes [observers.size()];
-            for(int i=0;i<observers.size();++i)
-                processes[i] = thread (&ImageGateway::update_observer,observers[i],image_);
-            for(int i=0;i<observers.size();++i)
+            thread processes [observers_.size()];
+            for(int i=0;i<observers_.size();++i)
+                processes[i] = thread (&ImageGateway::update_observer,observers_[i],image_);
+            for(int i=0;i<observers_.size();++i)
                 processes[i].join();
         }
 
         void add_observer(Observer<Mat>* o)
         {
-            observers.push_back(o);
+            observers_.push_back(o);
         }
 
         void remove_observer(Observer<Mat>* o)
         {
-            observers.erase(remove(observers.begin(),observers.end(),o));
+            observers_.erase(remove(observers_.begin(),observers_.end(),o));
         }
 
         static void update_observer(Observer<Mat>* obs, Mat image)
@@ -46,7 +46,7 @@ public Observable<Mat>
     private:
         Mat image_;
 
-        vector < Observer<Mat>* > observers;
+        vector < Observer<Mat>* > observers_;
 
         static void callback_function()
         {

@@ -11,22 +11,22 @@ struct ImageAndContours
     Mat image;
     vector< vector<Point> > contours;
 };
+
 Mat erode_image(Mat image,Mat kern);
 Mat dilate_image(Mat image,Mat kern);
 Mat threshold_over_range(Mat image,Scalar lower,Scalar upper);
 ImageAndContours run_contour_search(Mat image);
 Mat erase_contours (ImageAndContours features);
 
-
 Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
 {
-    cout << obj->get_lower_threshold()<<endl;
     return dilate_image(
         erase_contours(
         run_contour_search(
         erode_image(
         threshold_over_range(image.clone(),obj->get_lower_threshold(),obj->get_upper_threshold()),obj->get_kernel()))),obj->get_kernel());
 }
+
 Mat threshold_over_range(Mat image,Scalar lower,Scalar upper)
 {
     inRange(image,lower,upper,image);
@@ -60,6 +60,7 @@ ImageAndContours run_contour_search(Mat image)
 
 Mat erase_contours_under_area(ImageAndContours features, int area);
 int get_max_contour_area(vector< vector<Point> > contours);
+
 Mat erase_contours (ImageAndContours features)
 {
     int largest_contour_area = get_max_contour_area(features.contours);

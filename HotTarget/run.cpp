@@ -5,9 +5,8 @@
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/core/core.hpp>
 #include<iostream>
-
+#include<boost/scoped_ptr.hpp>
 using namespace std;
-
 ImageObject* red_ball = new RedBall();
 ImageObject* blue_ball = new BlueBall();
 ImageObject* horiz_target = new HorizHotTarget();
@@ -26,35 +25,47 @@ ScoreAnalyzer vert_target_scorer(vert_target);
 ImageGateway image_handler;
 
 bool read_image(Mat container, string filename);
-void report_scores(ScoreAnalyzer analyzer,string findername);
+void report_scores(ScoreAnalyzer analyzer,string findername,Mat image);
 void init_handlers();
 
 int main(int argc, char* argv [])
 {
+    namedWindow("initial image",WINDOW_AUTOSIZE);
+    init_handlers();
     for(int i=1;i<argc;++i)
     {
-        namedWindow("initial image",WINDOW_AUTOSIZE);
-        init_handlers();
         Mat image = imread(argv[i],CV_LOAD_IMAGE_COLOR);
-        imshow("initial image",image);
+        if(!image.data)
+        {
+            cout << "Data read error";
+            return -1;
+        }
         image_handler.set_image(image); 
-        waitKey(0);
         blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
         red_ball_scorer.calculate_scores(red_ball_finder.get_image());
         horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
         vert_target_scorer.calculate_scores(vert_target_finder.get_image());
         cout << "Report out for image " << argv[i] <<endl;
-        report_scores(blue_ball_scorer, "Blue ball finder");
-        report_scores(horiz_target_scorer,"Horizontal target finder");
-        report_scores(vert_target_scorer, "Vertical target finder");
-        report_scores(red_ball_scorer, "Red ball finder");
+        report_scores(blue_ball_scorer, "Blue ball finder",image);
+        report_scores(horiz_target_scorer,"Horizontal target finder",image);
+        report_scores(vert_target_scorer, "Vertical target finder",image);
+        report_scores(red_ball_scorer, "Red ball finder",image);
+        imshow("initial image",image);
+        waitKey(0);
     }
+
+    destroyWindow("initial image");
 }
 
-void report_scores(ScoreAnalyzer score,string findername)
+void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
 {
-    vector<Score> scores=score.get_scores();
-    cout << findername << " found " << scores.size() << " matches"<<endl;
+    vector<Score> scores=scorer.get_scores();
+    cout << findername << " found " << scores.size() << " match(es)"<<endl;
+    for(int i =0;i<scores.size();++i)
+    {
+        cout << "Match at: " << scores[i].position << endl;
+        circle(image,scores[i].position,10,Scalar(255,0,255),2);
+    }
 }
 
 void init_handlers()
