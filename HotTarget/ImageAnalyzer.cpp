@@ -54,7 +54,7 @@ ImageAndContours run_contour_search(Mat image)
 {
     vector< vector<Point> > contours;
     vector<Vec4i> hierarchy;
-    findContours(image,contours,hierarchy,CV_RETR_TREE,CV_CHAIN_APPROX_SIMPLE);
+    findContours(image.clone(),contours,hierarchy,CV_RETR_TREE,CV_CHAIN_APPROX_SIMPLE);
     return pack_image_and_contours(image,contours);
 }
 

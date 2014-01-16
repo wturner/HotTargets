@@ -30,31 +30,47 @@ void init_handlers();
 
 int main(int argc, char* argv [])
 {
-    namedWindow("initial image",WINDOW_AUTOSIZE);
     init_handlers();
-    for(int i=1;i<argc;++i)
-    {
-        Mat image = imread(argv[i],CV_LOAD_IMAGE_COLOR);
-        if(!image.data)
-        {
-            cout << "Data read error";
-            return -1;
-        }
-        image_handler.set_image(image); 
-        blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
-        red_ball_scorer.calculate_scores(red_ball_finder.get_image());
-        horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
-        vert_target_scorer.calculate_scores(vert_target_finder.get_image());
-        cout << "Report out for image " << argv[i] <<endl;
-        report_scores(blue_ball_scorer, "Blue ball finder",image);
-        report_scores(horiz_target_scorer,"Horizontal target finder",image);
-        report_scores(vert_target_scorer, "Vertical target finder",image);
-        report_scores(red_ball_scorer, "Red ball finder",image);
-        imshow("initial image",image);
-        waitKey(0);
-    }
+	VideoCapture cap("rtsp://192.168.0.100/axis-media/media.amp"); // open the axis camera
+    if(!cap.isOpened()){  // check if we succeeded	
+		printf("Unable to get camera.\n");
+		return -1;
+	}
+	
+	namedWindow("Camera Feed", CV_WINDOW_AUTOSIZE);
 
-    destroyWindow("initial image");
+    Mat image;
+    image.release();
+	cap.read(image);
+		
+		//Settting up quadrantal points for crosshairs
+		CvPoint top, bottom, left, right;
+		top.y = 0;
+		top.x = image.cols/2;
+		bottom.y = image.rows;
+		bottom.x = image.cols/2;
+		left.y = image.rows/2;
+		left.x = 0;
+		right.y = image.rows/2;
+		right.x = image.cols;
+
+		//Adding crosshairs
+		line(image, top, bottom, CV_RGB(255, 0, 0), 2);
+		line(image, left, right, CV_RGB(255, 0, 0), 2);
+    image_handler.set_image(image); 
+    blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
+    red_ball_scorer.calculate_scores(red_ball_finder.get_image());
+    horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
+    vert_target_scorer.calculate_scores(vert_target_finder.get_image());
+
+    cout << "Report out for image " << 1 <<endl;
+
+    report_scores(blue_ball_scorer, "Blue ball finder",image);
+    report_scores(horiz_target_scorer,"Horizontal target finder",image);
+    report_scores(vert_target_scorer, "Vertical target finder",image);
+    report_scores(red_ball_scorer, "Red ball finder",image);
+    imshow("Camera Feed",image);
+    waitKey(0);
 }
 
 void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
