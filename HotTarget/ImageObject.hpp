@@ -20,6 +20,10 @@ class ImageObject
         virtual double calculate_area(double width,double height)=0;
         virtual double area_threshold()=0;
         virtual double ratio_threshold()=0;
+        virtual double calculate_distance(int width,int height)
+        {
+            return 0;
+        }
 
         Scalar get_upper_threshold()
         {
