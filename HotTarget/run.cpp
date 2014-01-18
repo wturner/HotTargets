@@ -5,7 +5,6 @@
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/core/core.hpp>
 #include<iostream>
-#include<boost/scoped_ptr.hpp>
 using namespace std;
 ImageObject* red_ball = new RedBall();
 ImageObject* blue_ball = new BlueBall();
@@ -28,6 +27,7 @@ bool read_image(Mat container, string filename);
 void report_scores(ScoreAnalyzer analyzer,string findername,Mat image);
 void init_handlers();
 
+#ifndef NO_CAMERA
 int main(int argc, char* argv [])
 {
     init_handlers();
@@ -37,41 +37,47 @@ int main(int argc, char* argv [])
 		return -1;
 	}
 	
-	namedWindow("Camera Feed", CV_WINDOW_AUTOSIZE);
-
     Mat image;
+    #ifndef DEBUG_ON
+    for(;;){
+    #endif
     image.release();
 	cap.read(image);
+    #ifdef DEBUG_ON
+    imwrite("DEBUG.jpg",image);
+    #endif
+    cvtColor(image.clone(),image,CV_BGR2HSV);
 		
-		//Settting up quadrantal points for crosshairs
-		CvPoint top, bottom, left, right;
-		top.y = 0;
-		top.x = image.cols/2;
-		bottom.y = image.rows;
-		bottom.x = image.cols/2;
-		left.y = image.rows/2;
-		left.x = 0;
-		right.y = image.rows/2;
-		right.x = image.cols;
-
-		//Adding crosshairs
-		line(image, top, bottom, CV_RGB(255, 0, 0), 2);
-		line(image, left, right, CV_RGB(255, 0, 0), 2);
     image_handler.set_image(image); 
     blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
     red_ball_scorer.calculate_scores(red_ball_finder.get_image());
     horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
     vert_target_scorer.calculate_scores(vert_target_finder.get_image());
 
-    cout << "Report out for image " << 1 <<endl;
-
     report_scores(blue_ball_scorer, "Blue ball finder",image);
     report_scores(horiz_target_scorer,"Horizontal target finder",image);
     report_scores(vert_target_scorer, "Vertical target finder",image);
     report_scores(red_ball_scorer, "Red ball finder",image);
-    imshow("Camera Feed",image);
-    waitKey(0);
+    #ifndef DEBUG_ON
+    }
+    #endif
 }
+#endif
+#ifdef NO_CAMERA
+int main(int argc,char*argv[])
+{
+    Mat image;
+    image =imread(argv[1],CV_LOAD_IMAGE_COLOR);
+    cvtColor(image,image,CV_BGR2HSV);
+    horiz_target_finder.run_filter(image);
+    vert_target_finder.run_filter(image);
+    horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
+    vert_target_scorer.calculate_scores(vert_target_finder.get_image());
+    report_scores(horiz_target_scorer,"horiz target finder",image);
+    report_scores(vert_target_scorer,"vert target finder",image);
+    cvtColor(image,image,CV_HSV2BGR);
+}
+#endif
 
 void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
 {

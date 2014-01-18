@@ -2,6 +2,7 @@
 #include<opencv2/core/core.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
 #include<iostream>
+#include<opencv2/highgui/highgui.hpp>
 
 using namespace std;
 using namespace cv;
@@ -12,6 +13,7 @@ struct ImageAndContours
     vector< vector<Point> > contours;
 };
 
+Mat blur_image(Mat image,int value);
 Mat erode_image(Mat image,Mat kern);
 Mat dilate_image(Mat image,Mat kern);
 Mat threshold_over_range(Mat image,Scalar lower,Scalar upper);
@@ -20,13 +22,43 @@ Mat erase_contours (ImageAndContours features);
 
 Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
 {
-    return dilate_image(
-        erase_contours(
-        run_contour_search(
-        erode_image(
-        threshold_over_range(image.clone(),obj->get_lower_threshold(),obj->get_upper_threshold()),obj->get_kernel()))),obj->get_kernel());
+    Mat thresh = threshold_over_range(image,obj->get_lower_threshold(),obj->get_upper_threshold());
+    #ifdef DEBUG_ON
+    namedWindow("debug",WINDOW_AUTOSIZE);
+    imshow("debug",thresh);
+    waitKey(0);
+    #endif
+    Mat blur = blur_image(image,30);
+    Mat erode = erode_image(thresh, obj->get_kernel());
+    #ifdef DEBUG_ON
+    imshow("debug",erode);
+    waitKey(0);
+    #endif
+    ImageAndContours contours = run_contour_search(erode);
+    Mat erased = erase_contours(contours);
+    #ifdef DEBUG_ON
+    imshow("debug",erased);
+    waitKey(0);
+    #endif
+    Mat dilated = dilate_image(erased,obj->get_kernel());
+    #ifdef DEBUG_ON
+    imshow("debug",dilated);
+    waitKey(0);
+    cout<<"done"<<endl;
+    destroyWindow("debug");
+    #endif
+    return dilated;
 }
 
+Mat blur_image(Mat image,int value)
+{
+    Mat dst;
+    for(int i=1;i<value;i+=2)
+    {
+        blur(image,dst,Size(i,i),Point(-1,-1));
+    }
+    return dst;
+}
 Mat threshold_over_range(Mat image,Scalar lower,Scalar upper)
 {
     inRange(image,lower,upper,image);

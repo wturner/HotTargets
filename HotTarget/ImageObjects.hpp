@@ -4,7 +4,7 @@
 #ifndef IMAGEOBJECTS_HPP
 #define IMAGEOBJECTS_HPP
 #define AREA_THRESHOLD 45
-#define RATIO_THRESHOLD 45
+#define RATIO_THRESHOLD 70 
 
 class Ball:
 public ImageObject
@@ -22,7 +22,7 @@ public ImageObject
         }
         double area_threshold()
         {
-            return AREA_THRESHOLD+40; 
+            return AREA_THRESHOLD; 
         }
         double ratio()
         {
@@ -30,7 +30,7 @@ public ImageObject
         }
         double ratio_threshold()
         {
-            return RATIO_THRESHOLD+40;
+            return 90;
         }
 };
 
@@ -39,7 +39,7 @@ public Ball
 {
     public:
         RedBall() :
-            Ball(Scalar(0,0,70,0),Scalar(100,100,255,255)){}
+            Ball(Scalar(160,160,0),Scalar(180,255,255)){}
 };
 
 class BlueBall:
@@ -47,7 +47,7 @@ public Ball
 {
     public:
         BlueBall() :
-            Ball(Scalar(60,10,0,0),Scalar(255,170,130,255)){}
+            Ball(Scalar(100,120,200),Scalar(120,255,255)){}
 };
 
 class HotTarget:
@@ -56,7 +56,7 @@ public ImageObject
     private:
         double ratio_;
     public:
-        HotTarget(double ratio) : ImageObject(Scalar(0,60,0,0),Scalar(255,255,10,255),Mat::ones(5,5,CV_8U))
+        HotTarget(double ratio) : ImageObject(Scalar(80,10,200),Scalar(90,255,255),Mat::ones(5,5,CV_8U))
         {
             this->ratio_=ratio;
         };

@@ -39,8 +39,17 @@ public Observer<Mat>
         }
         void update(Mat arg, void (*function)())
         {
+            #ifdef DEBUG_ON
+            cout<<"updating"<<endl;
+            #endif
             run_filter(arg);
+            #ifdef DEBUG_ON
+            cout<<"Ran filter"<<endl;
+            #endif
             function();
+            #ifdef DEBUG_ON
+            cout<<"Called back"<<endl;
+            #endif
         }
        
         void run_filter(const Mat image)

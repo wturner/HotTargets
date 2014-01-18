@@ -21,11 +21,21 @@ public Observable<Mat>
 
         void notify_observers()
         {
+            //only run multithreaded if not debugging
+            #ifndef DEBUG_ON
             thread processes [observers_.size()];
             for(int i=0;i<observers_.size();++i)
                 processes[i] = thread (&ImageGateway::update_observer,observers_[i],image_);
             for(int i=0;i<observers_.size();++i)
-                processes[i].join();
+                processes[i].join(); 
+            #endif
+
+            #ifdef DEBUG_ON
+            for(int i=0; i<observers_.size();++i)
+            {
+                ImageGateway::update_observer(observers_[i],image_);
+            }
+            #endif
         }
 
         void add_observer(Observer<Mat>* o)
@@ -50,7 +60,9 @@ public Observable<Mat>
 
         static void callback_function()
         {
+            #ifdef DEBUG_ON
             cout<<"Done with image"<<endl;
+            #endif
         }
 };
 #endif
