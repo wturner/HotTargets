@@ -7,8 +7,8 @@
 #define RATIO_THRESHOLD 70 
 #define FOCAL_LENGTH 2.8
 
-//place the real values
-#define OBJECT_HEIGHT 812.8
+//the height for the vertical height
+#define VERTI_HEIGHT 812.8
 
 
 class Ball:
@@ -87,15 +87,14 @@ class HorizHotTarget:
 public HotTarget
 {
     public:
-        double objectPixelHeight;
         HorizHotTarget() : HotTarget(23.5/4){};
         
         //measurements are in mm, that is why to be in meters there is a division by 1,000 m
         double calculate_distance(int width, int height, Units unit){
               if(unit == Units.M){
-                        return FOCAL_LENGTH * OBJECT_HEIGHT * height / (objectPixelHeight * SENSOR_HEIGHT * 1000.);
+                        return FOCAL_LENGTH * VERTI_HEIGHT * imageHeight / (height * SENSOR_HEIGHT * 1000.);
               }else if(unit == Units.MM){ 
-                        return FOCAL_LENGTH * OBJECT_HEIGHT * height / (objectPixelHeight * SENSOR_HEIGHT);
+                        return FOCAL_LENGTH * VERTI_HEIGHT * imageHeight / (height * SENSOR_HEIGHT);
               }
 
         }

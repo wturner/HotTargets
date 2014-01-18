@@ -20,6 +20,8 @@ class ImageObject
                 M, MM
         };
 
+        double imageHeight;
+
         virtual double ratio()=0;
         virtual double calculate_area(double width,double height)=0;
         virtual double area_threshold()=0;
