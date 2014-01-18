@@ -4,7 +4,7 @@
 #ifndef IMAGEOBJECTS_HPP
 #define IMAGEOBJECTS_HPP
 #define AREA_THRESHOLD 45
-#define RATIO_THRESHOLD 70 
+#define RATIO_THRESHOLD 60
 
 class Ball:
 public ImageObject
