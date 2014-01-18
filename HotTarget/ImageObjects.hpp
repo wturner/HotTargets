@@ -4,12 +4,11 @@
 #ifndef IMAGEOBJECTS_HPP
 #define IMAGEOBJECTS_HPP
 #define AREA_THRESHOLD 45
-#define RATIO_THRESHOLD 70 
+#define RATIO_THRESHOLD 60 
 #define FOCAL_LENGTH 2.8
 
 //the height for the vertical height
 #define VERTI_HEIGHT 812.8
-
 
 class Ball:
 public ImageObject
