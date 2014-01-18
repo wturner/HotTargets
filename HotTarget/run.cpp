@@ -4,7 +4,9 @@
 #include "ImageGateway.hpp"
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include<iostream>
+#include <opencv/cv.h>
 using namespace std;
 ImageObject* red_ball = new RedBall();
 ImageObject* blue_ball = new BlueBall();

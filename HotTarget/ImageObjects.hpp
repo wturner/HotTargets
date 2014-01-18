@@ -6,6 +6,7 @@
 #define AREA_THRESHOLD 45
 #define RATIO_THRESHOLD 60 
 #define FOCAL_LENGTH 2.8
+#define SENSOR_HEIGHT 1000
 
 //the height for the vertical height
 #define VERTI_HEIGHT 812.8
@@ -90,9 +91,9 @@ public HotTarget
         
         //measurements are in mm, that is why to be in meters there is a division by 1,000 m
         double calculate_distance(int width, int height, Units unit){
-              if(unit == Units.M){
+              if(unit == Units::M){
                         return FOCAL_LENGTH * VERTI_HEIGHT * imageHeight / (height * SENSOR_HEIGHT * 1000.);
-              }else if(unit == Units.MM){ 
+              }else if(unit == Units::MM){ 
                         return FOCAL_LENGTH * VERTI_HEIGHT * imageHeight / (height * SENSOR_HEIGHT);
               }
 
