@@ -15,12 +15,18 @@ class ImageObject
             this->lower_threshold_=lower_threshold;
             this->kernel_=kernel;
         }
+        
+        enum Units{
+                M, MM
+        };
+
+        double imageHeight;
 
         virtual double ratio()=0;
         virtual double calculate_area(double width,double height)=0;
         virtual double area_threshold()=0;
         virtual double ratio_threshold()=0;
-        virtual double calculate_distance(int width,int height)
+        virtual double calculate_distance(int width,int height,Units unit)
         {
             return 0;
         }
