@@ -28,8 +28,8 @@ Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
     imshow("debug",thresh);
     waitKey(0);
     #endif
-    Mat blur = blur_image(image,30);
-    Mat erode = erode_image(thresh, obj->get_kernel());
+    Mat blur = blur_image(thresh,6);
+    Mat erode = erode_image(blur, obj->get_kernel());
     #ifdef DEBUG_ON
     imshow("debug",erode);
     waitKey(0);
@@ -96,7 +96,7 @@ int get_max_contour_area(vector< vector<Point> > contours);
 Mat erase_contours (ImageAndContours features)
 {
     int largest_contour_area = get_max_contour_area(features.contours);
-    return erase_contours_under_area(features,largest_contour_area/4);
+    return erase_contours_under_area(features,largest_contour_area/3);
 }
 
 int get_max_contour_area(vector< vector<Point> > contours)
@@ -115,7 +115,7 @@ Mat erase_contours_under_area(ImageAndContours features, int area)
 {
     Mat dst = Mat::zeros(features.image.rows,features.image.cols,CV_8U);
     for(int i=0;i<features.contours.size();++i)
-        if(contour_area_greater_than(features.contours[i],area))
+        if(contour_area_greater_than(features.contours[i],area)&&area>120)
             drawContours(dst,features.contours,i,Scalar(225,225,225,225),CV_FILLED);
     return dst;
 }

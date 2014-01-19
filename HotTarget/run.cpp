@@ -6,6 +6,7 @@
 #include<opencv2/core/core.hpp>
 #include<iostream>
 using namespace std;
+using namespace cv;
 ImageObject* red_ball = new RedBall();
 ImageObject* blue_ball = new BlueBall();
 ImageObject* horiz_target = new HorizHotTarget();
@@ -37,16 +38,17 @@ int main(int argc, char* argv [])
 		return -1;
 	}
 	
-    Mat image;
+    Mat imageBGR;
     #ifndef DEBUG_ON
     for(;;){
     #endif
-    image.release();
-	cap.read(image);
+    imageBGR.release();
+	cap.read(imageBGR);
     #ifdef DEBUG_ON
-    imwrite("DEBUG.jpg",image);
+    imwrite("DEBUG.jpg",imageBGR);
     #endif
-    cvtColor(image.clone(),image,CV_BGR2HSV);
+    Mat image;
+    cvtColor(imageBGR,image,CV_BGR2HSV);
 		
     image_handler.set_image(image); 
     blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
@@ -54,10 +56,15 @@ int main(int argc, char* argv [])
     horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
     vert_target_scorer.calculate_scores(vert_target_finder.get_image());
 
-    report_scores(blue_ball_scorer, "Blue ball finder",image);
-    report_scores(horiz_target_scorer,"Horizontal target finder",image);
-    report_scores(vert_target_scorer, "Vertical target finder",image);
-    report_scores(red_ball_scorer, "Red ball finder",image);
+    report_scores(blue_ball_scorer, "Blue ball finder",imageBGR);
+    report_scores(horiz_target_scorer,"Horizontal target finder",imageBGR);
+    report_scores(vert_target_scorer, "Vertical target finder",imageBGR);
+    report_scores(red_ball_scorer, "Red ball finder",imageBGR);
+    #ifdef DEBUG_ON
+    namedWindow("ex",WINDOW_AUTOSIZE);
+    imshow("ex",imageBGR);
+    waitKey(0);
+    #endif
     #ifndef DEBUG_ON
     }
     #endif
@@ -86,7 +93,7 @@ void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
     for(int i =0;i<scores.size();++i)
     {
         cout << "Match at: " << scores[i].position << endl;
-        circle(image,scores[i].position,10,Scalar(255,0,255),2);
+        circle(image,scores[i].position,10,Scalar(255,100,100),2);
     }
 }
 

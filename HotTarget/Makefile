@@ -114,6 +114,54 @@ run/fast:
 	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
+ImageAnalyzer.o: ImageAnalyzer.cpp.o
+.PHONY : ImageAnalyzer.o
+
+# target to build an object file
+ImageAnalyzer.cpp.o:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ImageAnalyzer.cpp.o
+.PHONY : ImageAnalyzer.cpp.o
+
+ImageAnalyzer.i: ImageAnalyzer.cpp.i
+.PHONY : ImageAnalyzer.i
+
+# target to preprocess a source file
+ImageAnalyzer.cpp.i:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ImageAnalyzer.cpp.i
+.PHONY : ImageAnalyzer.cpp.i
+
+ImageAnalyzer.s: ImageAnalyzer.cpp.s
+.PHONY : ImageAnalyzer.s
+
+# target to generate assembly for a file
+ImageAnalyzer.cpp.s:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ImageAnalyzer.cpp.s
+.PHONY : ImageAnalyzer.cpp.s
+
+ScoreAnalyzer.o: ScoreAnalyzer.cpp.o
+.PHONY : ScoreAnalyzer.o
+
+# target to build an object file
+ScoreAnalyzer.cpp.o:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ScoreAnalyzer.cpp.o
+.PHONY : ScoreAnalyzer.cpp.o
+
+ScoreAnalyzer.i: ScoreAnalyzer.cpp.i
+.PHONY : ScoreAnalyzer.i
+
+# target to preprocess a source file
+ScoreAnalyzer.cpp.i:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ScoreAnalyzer.cpp.i
+.PHONY : ScoreAnalyzer.cpp.i
+
+ScoreAnalyzer.s: ScoreAnalyzer.cpp.s
+.PHONY : ScoreAnalyzer.s
+
+# target to generate assembly for a file
+ScoreAnalyzer.cpp.s:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ScoreAnalyzer.cpp.s
+.PHONY : ScoreAnalyzer.cpp.s
+
 run.o: run.cpp.o
 .PHONY : run.o
 
@@ -147,6 +195,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
+	@echo "... ImageAnalyzer.o"
+	@echo "... ImageAnalyzer.i"
+	@echo "... ImageAnalyzer.s"
+	@echo "... ScoreAnalyzer.o"
+	@echo "... ScoreAnalyzer.i"
+	@echo "... ScoreAnalyzer.s"
 	@echo "... run.o"
 	@echo "... run.i"
 	@echo "... run.s"

@@ -22,7 +22,7 @@ public ImageObject
         }
         double area_threshold()
         {
-            return AREA_THRESHOLD; 
+            return 90; 
         }
         double ratio()
         {
@@ -39,7 +39,7 @@ public Ball
 {
     public:
         RedBall() :
-            Ball(Scalar(160,160,0),Scalar(180,255,255)){}
+            Ball(Scalar(160,100,0),Scalar(180,255,255)){}
 };
 
 class BlueBall:
@@ -47,7 +47,7 @@ public Ball
 {
     public:
         BlueBall() :
-            Ball(Scalar(100,120,200),Scalar(120,255,255)){}
+            Ball(Scalar(100,120,15),Scalar(130,255,255)){}
 };
 
 class HotTarget:
