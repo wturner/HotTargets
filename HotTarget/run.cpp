@@ -1,7 +1,9 @@
 #include "ImageAnalyzer.hpp"
 #include "ScoreAnalyzer.hpp"
 #include "ImageObjects.hpp"
+#include "ImageObject.hpp"
 #include "ImageGateway.hpp"
+#include<signal.h>
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -29,6 +31,14 @@ ImageGateway image_handler;
 bool read_image(Mat container, string filename);
 void report_scores(ScoreAnalyzer analyzer,string findername,Mat image);
 void init_handlers();
+
+void handle(sig_t sig)
+{
+    delete red_ball;
+    delete blue_ball;
+    delete horiz_target;
+    delete vert_target;
+}
 
 #ifndef NO_CAMERA
 int main(int argc, char* argv [])
@@ -62,14 +72,22 @@ int main(int argc, char* argv [])
     report_scores(horiz_target_scorer,"Horizontal target finder",imageBGR);
     report_scores(vert_target_scorer, "Vertical target finder",imageBGR);
     report_scores(red_ball_scorer, "Red ball finder",imageBGR);
+
     #ifdef DEBUG_ON
     namedWindow("ex",WINDOW_AUTOSIZE);
     imshow("ex",imageBGR);
     waitKey(0);
     #endif
+
     #ifndef DEBUG_ON
     }
     #endif
+
+    delete red_ball;
+    delete blue_ball;
+    delete horiz_target;
+    delete vert_target;
+    
 }
 #endif
 #ifdef NO_CAMERA
@@ -85,6 +103,10 @@ int main(int argc,char*argv[])
     report_scores(horiz_target_scorer,"horiz target finder",image);
     report_scores(vert_target_scorer,"vert target finder",image);
     cvtColor(image,image,CV_HSV2BGR);
+    delete red_ball;
+    delete blue_ball;
+    delete horiz_target;
+    delete vert_target;
 }
 #endif
 
@@ -95,6 +117,7 @@ void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
     for(int i =0;i<scores.size();++i)
     {
         cout << "Match at: " << scores[i].position << endl;
+        cout << "Distance: " << scores[i].distance << endl;
         circle(image,scores[i].position,10,Scalar(255,100,100),2);
     }
 }

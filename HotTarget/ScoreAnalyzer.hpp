@@ -13,6 +13,7 @@ struct Score
 {
     double area_score;
     double ratio_score;
+    double distance;
     Point position;
 };
 
@@ -20,11 +21,11 @@ class ScoreAnalyzer:
 public Observer<Mat>
 {
     public:
+
         ScoreAnalyzer(ImageObject* object)
         {
             this->object_=object;
         }
-
 
         vector<Score> get_scores()
         {
