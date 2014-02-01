@@ -3,7 +3,7 @@
 #include "ImageObjects.hpp"
 #include "ImageObject.hpp"
 #include "ImageGateway.hpp"
-#include<signal.h>
+#include<csignal>
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -31,19 +31,19 @@ ImageGateway image_handler;
 bool read_image(Mat container, string filename);
 void report_scores(ScoreAnalyzer analyzer,string findername,Mat image);
 void init_handlers();
+int cameraEnabled();
+int cameraDisabled(string str);
 
-void handle(sig_t sig)
-{
-    delete red_ball;
-    delete blue_ball;
-    delete horiz_target;
-    delete vert_target;
-}
-
-#ifndef NO_CAMERA
-int main(int argc, char* argv [])
+int main(int argc, char* argv[])
 {
     init_handlers();
+    if(argc==1)
+        return cameraEnabled();
+    for(int i=0;i<argc;++i)
+        return cameraDisabled(argv[i+1]);
+}
+int cameraEnabled()
+{
 	VideoCapture cap("rtsp://192.168.0.100/axis-media/media.amp"); // open the axis camera
     if(!cap.isOpened()){  // check if we succeeded	
 		printf("Unable to get camera.\n");
@@ -87,28 +87,33 @@ int main(int argc, char* argv [])
     delete blue_ball;
     delete horiz_target;
     delete vert_target;
-    
+    exit(0);
 }
-#endif
-#ifdef NO_CAMERA
-int main(int argc,char*argv[])
+
+int cameraDisabled(string str)
 {
     Mat image;
-    image =imread(argv[1],CV_LOAD_IMAGE_COLOR);
+    image =imread(str,CV_LOAD_IMAGE_COLOR);
     cvtColor(image,image,CV_BGR2HSV);
     horiz_target_finder.run_filter(image);
     vert_target_finder.run_filter(image);
+    blue_ball_finder.run_filter(image);
+    red_ball_finder.run_filter(image);
     horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
     vert_target_scorer.calculate_scores(vert_target_finder.get_image());
+    blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
+    red_ball_scorer.calculate_scores(red_ball_finder.get_image());
     report_scores(horiz_target_scorer,"horiz target finder",image);
     report_scores(vert_target_scorer,"vert target finder",image);
+    report_scores(blue_ball_scorer,"blue ball finder",image);
+    report_scores(red_ball_scorer,"red ball finder",image);
     cvtColor(image,image,CV_HSV2BGR);
     delete red_ball;
     delete blue_ball;
     delete horiz_target;
     delete vert_target;
+    return 0;
 }
-#endif
 
 void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
 {
@@ -117,7 +122,6 @@ void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
     for(int i =0;i<scores.size();++i)
     {
         cout << "Match at: " << scores[i].position << endl;
-        cout << "Distance: " << scores[i].distance << endl;
         circle(image,scores[i].position,10,Scalar(255,100,100),2);
     }
 }

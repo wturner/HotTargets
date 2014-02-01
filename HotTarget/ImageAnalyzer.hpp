@@ -17,14 +17,8 @@ public Observer<Mat>
 
         Mat image_;
         ImageObject* object_;
-        bool updating_=false;
 
         Mat run_checked_filter(Mat image,ImageObject* obj);
-
-        void wait_for_modification_end()
-        {
-            while(updating_){};
-        }
 
         void set_image(const Mat image)
         {

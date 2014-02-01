@@ -17,6 +17,10 @@ public ImageObject
             ImageObject(low,high,
             getStructuringElement(MORPH_ELLIPSE,Size(15,15), 
             Point(0,0))){}
+        Ball(Scalar low, Scalar high, int a1, int a2) :
+            ImageObject(low,high,
+            getStructuringElement(MORPH_ELLIPSE,Size(15,15), 
+            Point(0,0)),a1,a2){}
 
         double calculate_area(double width, double height)
         {
@@ -42,7 +46,7 @@ public Ball
 {
     public:
         RedBall() :
-            Ball(Scalar(160,100,0),Scalar(180,255,255)){}
+            Ball(Scalar(160,0,0),Scalar(180,255,255),0,10){}
 };
 
 class BlueBall:
@@ -50,7 +54,7 @@ public Ball
 {
     public:
         BlueBall() :
-            Ball(Scalar(100,120,15),Scalar(130,255,255)){}
+            Ball(Scalar(100,120,15),Scalar(110,255,255)){}
 };
 
 class HotTarget:

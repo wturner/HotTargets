@@ -13,7 +13,7 @@ struct ImageAndContours
     vector< vector<Point> > contours;
 };
 
-Mat blur_image(Mat image,int value);
+Mat blur_image(Mat image,int value); 
 Mat erode_image(Mat image,Mat kern);
 Mat dilate_image(Mat image,Mat kern);
 Mat threshold_over_range(Mat image,Scalar lower,Scalar upper);
@@ -22,24 +22,43 @@ Mat erase_contours (ImageAndContours features);
 
 Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
 {
-    Mat thresh = threshold_over_range(image,obj->get_lower_threshold(),obj->get_upper_threshold());
+    //Remove all colors outside of color range to get a binary image
+    Mat thresh;
+    if(obj->filterTwice())
+    {
+        Scalar lThresh = obj->get_lower_threshold();
+        Scalar uThresh = obj->get_upper_threshold();
+        thresh = threshold_over_range(image,lThresh,uThresh);
+        lThresh[0]=obj->alt1_;
+        uThresh[0]=obj->alt2_;
+        Mat thresh2 = threshold_over_range(image,lThresh,uThresh);
+        Mat dst;
+        bitwise_or(thresh,thresh2,thresh);
+    }
+    else
+        thresh = threshold_over_range(image,obj->get_lower_threshold(),obj->get_upper_threshold());
     #ifdef DEBUG_ON
     namedWindow("debug",WINDOW_AUTOSIZE);
     imshow("debug",thresh);
     waitKey(0);
     #endif
+    //Blur image to blend close blobs
     Mat blur = blur_image(thresh,6);
+    //decrease size of blobs, remove ones that are not the right shape
     Mat erode = erode_image(blur, obj->get_kernel());
     #ifdef DEBUG_ON
     imshow("debug",erode);
     waitKey(0);
     #endif
+    //Get the remaining blobs from the image
     ImageAndContours contours = run_contour_search(erode);
+    //Erase, from the blobs remaining, ones that are under a reasonable area
     Mat erased = erase_contours(contours);
     #ifdef DEBUG_ON
     imshow("debug",erased);
     waitKey(0);
     #endif
+    //restore eroded blobs to original size
     Mat dilated = dilate_image(erased,obj->get_kernel());
     #ifdef DEBUG_ON
     imshow("debug",dilated);
@@ -47,6 +66,7 @@ Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
     cout<<"done"<<endl;
     destroyWindow("debug");
     #endif
+    //return filtered image
     return dilated;
 }
 
