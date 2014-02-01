@@ -37,10 +37,16 @@ int cameraDisabled(string str);
 int main(int argc, char* argv[])
 {
     init_handlers();
+    int code;
     if(argc==1)
-        return cameraEnabled();
-    for(int i=0;i<argc;++i)
-        return cameraDisabled(argv[i+1]);
+        code=cameraEnabled();
+    for(int i=0;i<argc-1;++i)
+        code=cameraDisabled(argv[i+1]);
+    delete red_ball;
+    delete blue_ball;
+    delete horiz_target;
+    delete vert_target;
+    return code;
 }
 int cameraEnabled()
 {
@@ -83,36 +89,36 @@ int cameraEnabled()
     }
     #endif
 
-    delete red_ball;
-    delete blue_ball;
-    delete horiz_target;
-    delete vert_target;
     exit(0);
 }
 
 int cameraDisabled(string str)
 {
+
     Mat image;
     image =imread(str,CV_LOAD_IMAGE_COLOR);
     cvtColor(image,image,CV_BGR2HSV);
+
     horiz_target_finder.run_filter(image);
     vert_target_finder.run_filter(image);
     blue_ball_finder.run_filter(image);
     red_ball_finder.run_filter(image);
+
     horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
     vert_target_scorer.calculate_scores(vert_target_finder.get_image());
     blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
     red_ball_scorer.calculate_scores(red_ball_finder.get_image());
+
     report_scores(horiz_target_scorer,"horiz target finder",image);
     report_scores(vert_target_scorer,"vert target finder",image);
     report_scores(blue_ball_scorer,"blue ball finder",image);
     report_scores(red_ball_scorer,"red ball finder",image);
+
     cvtColor(image,image,CV_HSV2BGR);
-    delete red_ball;
-    delete blue_ball;
-    delete horiz_target;
-    delete vert_target;
-    return 0;
+    namedWindow("show",WINDOW_AUTOSIZE);
+    imshow("show",image);
+    waitKey(0);
+    cvDestroyWindow("show");
 }
 
 void report_scores(ScoreAnalyzer scorer,string findername,Mat image)

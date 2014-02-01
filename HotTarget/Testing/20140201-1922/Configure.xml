@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20140201-1922-Experimental"
+	Name="j-arch"
+	Generator="ctest-2.8.12.1"
+	CompilerName="/usr/bin/c++"
+	OSName="Linux"
+	Hostname="j-arch"
+	OSRelease="3.12.0-1-ARCH"
+	OSVersion="#1 SMP PREEMPT Wed Nov 6 09:06:27 CET 2013"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="58"
+	ProcessorCacheSize="3072"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="2999"
+	TotalPhysicalMemory="5860"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2201.37"
+>
+<Configure>
+	<StartDateTime>Feb 01 14:22 EST</StartDateTime>
+	<StartConfigureTime>1391282560</StartConfigureTime>
+<ConfigureCommand>"/usr/bin/cmake" "/home/jagen31/Robotics/HotTarget/HotTarget"</ConfigureCommand>
+<Log>CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:15:94
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jagen31/Robotics/HotTarget/HotTarget
+</Log>
+	<ConfigureStatus>0</ConfigureStatus>
+	<EndDateTime>Feb 01 14:22 EST</EndDateTime>
+	<EndConfigureTime>1391282560</EndConfigureTime>
+<ElapsedMinutes>0</ElapsedMinutes></Configure>
+</Site>

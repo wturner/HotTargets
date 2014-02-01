@@ -12,6 +12,7 @@
 class Ball:
 public ImageObject
 {
+
     public:
         Ball(Scalar low, Scalar high) : 
             ImageObject(low,high,
@@ -46,7 +47,7 @@ public Ball
 {
     public:
         RedBall() :
-            Ball(Scalar(160,0,0),Scalar(180,255,255),0,10){}
+            Ball(Scalar(173,120,5),Scalar(180,255,255),0,5){}
 };
 
 class BlueBall:
@@ -54,7 +55,7 @@ public Ball
 {
     public:
         BlueBall() :
-            Ball(Scalar(100,120,15),Scalar(110,255,255)){}
+            Ball(Scalar(100,60,10),Scalar(120,255,255)){}
 };
 
 class HotTarget:
@@ -63,7 +64,7 @@ public ImageObject
     private:
         double ratio_;
     public:
-        HotTarget(double ratio) : ImageObject(Scalar(70,10,80),Scalar(90,255,255),Mat::ones(5,5,CV_8U))
+        HotTarget(double ratio) : ImageObject(Scalar(82,10,80),Scalar(89,255,255),Mat::ones(5,5,CV_8U))
         {
             this->ratio_=ratio;
         };

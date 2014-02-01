@@ -59,15 +59,16 @@ Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
     waitKey(0);
     #endif
     //restore eroded blobs to original size
-    Mat dilated = dilate_image(erased,obj->get_kernel());
+    //Mat dilated = dilate_image(erased,obj->get_kernel());
     #ifdef DEBUG_ON
-    imshow("debug",dilated);
+    imshow("debug",erased);
     waitKey(0);
     cout<<"done"<<endl;
     destroyWindow("debug");
     #endif
     //return filtered image
-    return dilated;
+    //return dilated;
+    return erased;
 }
 
 Mat blur_image(Mat image,int value)

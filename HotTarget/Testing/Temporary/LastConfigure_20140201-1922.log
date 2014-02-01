@@ -1,0 +1,11 @@
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:15:94
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jagen31/Robotics/HotTarget/HotTarget

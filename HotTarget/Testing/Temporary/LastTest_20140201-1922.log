@@ -1,0 +1,24 @@
+Start testing: Feb 01 14:22 EST
+----------------------------------------------------------
+1/1 Testing: Balls
+1/1 Test: Balls
+Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/balls.jpg"
+Directory: /home/jagen31/Robotics/HotTarget/HotTarget
+"Balls" start time: Feb 01 14:22 EST
+Output:
+----------------------------------------------------------
+horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 1 match(es)
+Match at: [568, 192]
+red ball finder found 1 match(es)
+Match at: [196, 182]
+<end of output>
+Test time =   1.67 sec
+----------------------------------------------------------
+Test Passed.
+"Balls" end time: Feb 01 14:22 EST
+"Balls" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Feb 01 14:22 EST
