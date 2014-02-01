@@ -9,10 +9,10 @@ class ImageObject
         Scalar upper_threshold_;
         Scalar lower_threshold_;
         Mat kernel_;
-        bool filterTwice_ = false;
+        bool filterTwice_;
     public:
-        int alt1_=0;
-        int alt2_=0;
+        int alt1_;
+        int alt2_;
         ImageObject(Scalar lower_threshold,Scalar upper_threshold,Mat kernel)
         {
             this->upper_threshold_=upper_threshold;
