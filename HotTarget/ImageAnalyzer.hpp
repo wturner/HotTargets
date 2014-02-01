@@ -3,7 +3,6 @@
 #include<opencv2/imgproc/imgproc.hpp>
 #include<iostream>
 #include"Observer.hpp"
-#include<thread>
 #ifndef IMAGEANALYZER_HPP
 #define IMAGEANALYZER_HPP
 using namespace cv;
@@ -54,14 +53,11 @@ public Observer<Mat>
        
         void run_filter(const Mat image)
         {
-            updating_=true;
             set_image(run_checked_filter(image,this->object_));
-            updating_=false;
         }
 
         Mat get_image()
         {
-            if(updating_) thread(&ImageAnalyzer::wait_for_modification_end,this).join();
             return image_;
         }
 

@@ -1,7 +1,6 @@
 #include"Observable.hpp"
 #include<opencv2/core/core.hpp>
 #include<iostream>
-#include<thread>
 #include"Observer.hpp"
 #ifndef IMAGEGATEWAY_HPP
 #define IMAGEGATEWAY_HPP
@@ -22,20 +21,19 @@ public Observable<Mat>
         void notify_observers()
         {
             //only run multithreaded if not debugging
-            #ifndef DEBUG_ON
+            //On second though, never multithread
+            /*#ifndef DEBUG_ON
             thread processes [observers_.size()];
             for(int i=0;i<observers_.size();++i)
                 processes[i] = thread (&ImageGateway::update_observer,observers_[i],image_);
             for(int i=0;i<observers_.size();++i)
                 processes[i].join(); 
-            #endif
+            #endif*/
 
-            #ifdef DEBUG_ON
             for(int i=0; i<observers_.size();++i)
             {
                 ImageGateway::update_observer(observers_[i],image_);
             }
-            #endif
         }
 
         void add_observer(Observer<Mat>* o)
