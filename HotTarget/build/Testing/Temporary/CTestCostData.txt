@@ -1,3 +1,0 @@
-Balls 0 0
----
-Balls
