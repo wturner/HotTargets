@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20140201-2029-Experimental"
+	Name="j-arch"
+	Generator="ctest-2.8.12.1"
+	CompilerName="/usr/bin/c++"
+	OSName="Linux"
+	Hostname="j-arch"
+	OSRelease="3.12.0-1-ARCH"
+	OSVersion="#1 SMP PREEMPT Wed Nov 6 09:06:27 CET 2013"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="58"
+	ProcessorCacheSize="3072"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="2999"
+	TotalPhysicalMemory="5860"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="1355.57"
+>
+<Testing>
+	<StartDateTime>Feb 01 15:29 EST</StartDateTime>
+	<StartTestTime>1391286560</StartTestTime>
+	<TestList>
+		<Test>./Balls</Test>
+		<Test>./BlueBall</Test>
+		<Test>./Target1</Test>
+		<Test>./Balls3</Test>
+		<Test>./ballOnChair</Test>
+		<Test>./Target2</Test>
+		<Test>./FRC</Test>
+	</TestList>
+	<Test Status="failed">
+		<Name>Balls</Name>
+		<Path>.</Path>
+		<FullName>./Balls</FullName>
+		<FullCommandLine>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/balls.jpg&quot;</FullCommandLine>
+		<Results>
+			<NamedMeasurement type="text/string" name="Exit Code"><Value>Failed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Exit Value"><Value>32</Value></NamedMeasurement>
+			<NamedMeasurement type="numeric/double" name="Execution Time"><Value>0.436291</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Fail Reason"><Value>Required regular expression not found.Regex=[red ball finder found 0 match(es)
+blue ball finder found 0 match(es)
+]</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Completion Status"><Value>Completed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Command Line"><Value>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/balls.jpg&quot;</Value></NamedMeasurement>
+			<Measurement>
+				<Value>horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 1 match(es)
+Match at: [568, 197]
+red ball finder found 1 match(es)
+Match at: [196, 182]
+</Value>
+			</Measurement>
+		</Results>
+	</Test>
+	<Test Status="failed">
+		<Name>BlueBall</Name>
+		<Path>.</Path>
+		<FullName>./BlueBall</FullName>
+		<FullCommandLine>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/blueball.jpg&quot;</FullCommandLine>
+		<Results>
+			<NamedMeasurement type="text/string" name="Exit Code"><Value>Failed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Exit Value"><Value>128</Value></NamedMeasurement>
+			<NamedMeasurement type="numeric/double" name="Execution Time"><Value>0.274896</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Completion Status"><Value>Completed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Command Line"><Value>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/blueball.jpg&quot;</Value></NamedMeasurement>
+			<Measurement>
+				<Value>horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 1 match(es)
+Match at: [331, 335]
+red ball finder found 0 match(es)
+</Value>
+			</Measurement>
+		</Results>
+	</Test>
+	<Test Status="failed">
+		<Name>Target1</Name>
+		<Path>.</Path>
+		<FullName>./Target1</FullName>
+		<FullCommandLine>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/target1.jpg&quot;</FullCommandLine>
+		<Results>
+			<NamedMeasurement type="text/string" name="Exit Code"><Value>Failed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Exit Value"><Value>64</Value></NamedMeasurement>
+			<NamedMeasurement type="numeric/double" name="Execution Time"><Value>0.226912</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Completion Status"><Value>Completed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Command Line"><Value>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/target1.jpg&quot;</Value></NamedMeasurement>
+			<Measurement>
+				<Value>horiz target finder found 1 match(es)
+Match at: [417, 204]
+vert target finder found 1 match(es)
+Match at: [386, 233]
+blue ball finder found 0 match(es)
+red ball finder found 0 match(es)
+</Value>
+			</Measurement>
+		</Results>
+	</Test>
+	<Test Status="failed">
+		<Name>Balls3</Name>
+		<Path>.</Path>
+		<FullName>./Balls3</FullName>
+		<FullCommandLine>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/balls3.jpg&quot;</FullCommandLine>
+		<Results>
+			<NamedMeasurement type="text/string" name="Exit Code"><Value>Failed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Exit Value"><Value>80</Value></NamedMeasurement>
+			<NamedMeasurement type="numeric/double" name="Execution Time"><Value>0.23779</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Completion Status"><Value>Completed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Command Line"><Value>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/balls3.jpg&quot;</Value></NamedMeasurement>
+			<Measurement>
+				<Value>horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 0 match(es)
+red ball finder found 1 match(es)
+Match at: [452, 135]
+</Value>
+			</Measurement>
+		</Results>
+	</Test>
+	<Test Status="failed">
+		<Name>ballOnChair</Name>
+		<Path>.</Path>
+		<FullName>./ballOnChair</FullName>
+		<FullCommandLine>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/ballOnChair.jpg&quot;</FullCommandLine>
+		<Results>
+			<NamedMeasurement type="text/string" name="Exit Code"><Value>Failed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Exit Value"><Value>96</Value></NamedMeasurement>
+			<NamedMeasurement type="numeric/double" name="Execution Time"><Value>0.279267</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Completion Status"><Value>Completed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Command Line"><Value>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/ballOnChair.jpg&quot;</Value></NamedMeasurement>
+			<Measurement>
+				<Value>horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 1 match(es)
+Match at: [699, 658]
+red ball finder found 0 match(es)
+</Value>
+			</Measurement>
+		</Results>
+	</Test>
+	<Test Status="failed">
+		<Name>Target2</Name>
+		<Path>.</Path>
+		<FullName>./Target2</FullName>
+		<FullCommandLine>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/target2.jpg&quot;</FullCommandLine>
+		<Results>
+			<NamedMeasurement type="text/string" name="Exit Code"><Value>Failed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Exit Value"><Value>224</Value></NamedMeasurement>
+			<NamedMeasurement type="numeric/double" name="Execution Time"><Value>0.246837</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Completion Status"><Value>Completed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Command Line"><Value>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/target2.jpg&quot;</Value></NamedMeasurement>
+			<Measurement>
+				<Value>horiz target finder found 1 match(es)
+Match at: [267, 128]
+vert target finder found 1 match(es)
+Match at: [221, 164]
+blue ball finder found 0 match(es)
+red ball finder found 0 match(es)
+</Value>
+			</Measurement>
+		</Results>
+	</Test>
+	<Test Status="failed">
+		<Name>FRC</Name>
+		<Path>.</Path>
+		<FullName>./FRC</FullName>
+		<FullCommandLine>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/FRC.jpg&quot;</FullCommandLine>
+		<Results>
+			<NamedMeasurement type="text/string" name="Exit Code"><Value>Failed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Exit Value"><Value>32</Value></NamedMeasurement>
+			<NamedMeasurement type="numeric/double" name="Execution Time"><Value>0.319686</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Completion Status"><Value>Completed</Value></NamedMeasurement>
+			<NamedMeasurement type="text/string" name="Command Line"><Value>/home/jagen31/Robotics/HotTarget/HotTarget/run &quot;/home/jagen31/Robotics/HotTarget/HotTarget/FRC.jpg&quot;</Value></NamedMeasurement>
+			<Measurement>
+				<Value>horiz target finder found 1 match(es)
+Match at: [402, 227]
+vert target finder found 1 match(es)
+Match at: [369, 257]
+blue ball finder found 0 match(es)
+red ball finder found 0 match(es)
+</Value>
+			</Measurement>
+		</Results>
+	</Test>
+	<EndDateTime>Feb 01 15:29 EST</EndDateTime>
+	<EndTestTime>1391286562</EndTestTime>
+<ElapsedMinutes>0</ElapsedMinutes></Testing>
+</Site>

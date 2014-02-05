@@ -1,0 +1,84 @@
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:15:94
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:23:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:24:93
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:28:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:28:135
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:32:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:35:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:36:93
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:39:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  Syntax Warning in cmake code at
+
+    /home/jagen31/Robotics/HotTarget/HotTarget/CMakeLists.txt:40:93
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jagen31/Robotics/HotTarget/HotTarget
+[100%] Built target run

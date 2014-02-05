@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20140201-2029-Experimental"
+	Name="j-arch"
+	Generator="ctest-2.8.12.1"
+	CompilerName="/usr/bin/c++"
+	OSName="Linux"
+	Hostname="j-arch"
+	OSRelease="3.12.0-1-ARCH"
+	OSVersion="#1 SMP PREEMPT Wed Nov 6 09:06:27 CET 2013"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="58"
+	ProcessorCacheSize="3072"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="2999"
+	TotalPhysicalMemory="5860"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2930.96"
+>
+<Build>
+	<StartDateTime>Feb 01 15:29 EST</StartDateTime>
+	<StartBuildTime>1391286560</StartBuildTime>
+<BuildCommand>/usr/bin/make -i</BuildCommand>
+	<Warning>
+		<BuildLogLine>1</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:15:94
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>9</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:23:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>17</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:24:93
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>25</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:28:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>33</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:28:135
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>41</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:32:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>49</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:35:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>57</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:36:93
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>65</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:39:97
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Warning>
+		<BuildLogLine>73</BuildLogLine>
+		<Text>CMake Warning (dev) in CMakeLists.txt:
+</Text>
+		<PreContext></PreContext>
+		<PostContext>  Syntax Warning in cmake code at
+
+    /.../HotTarget/CMakeLists.txt:40:93
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /.../HotTarget</PostContext>
+		<RepeatCount>0</RepeatCount>
+</Warning>
+
+
+	<Log Encoding="base64" Compression="/bin/gzip">
+	</Log>
+	<EndDateTime>Feb 01 15:29 EST</EndDateTime>
+	<EndBuildTime>1391286560</EndBuildTime>
+<ElapsedMinutes>0</ElapsedMinutes></Build>
+</Site>

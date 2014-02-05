@@ -64,7 +64,7 @@ public ImageObject
     private:
         double ratio_;
     public:
-        HotTarget(double ratio) : ImageObject(Scalar(82,10,80),Scalar(89,255,255),Mat::ones(5,5,CV_8U))
+        HotTarget(double ratio) : ImageObject(Scalar(82,50,80),Scalar(89,255,255),Mat::ones(5,5,CV_8U))
         {
             this->ratio_=ratio;
         };

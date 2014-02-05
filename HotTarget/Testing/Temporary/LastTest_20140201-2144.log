@@ -1,10 +1,10 @@
-Start testing: Feb 04 19:18 EST
+Start testing: Feb 01 16:44 EST
 ----------------------------------------------------------
 1/7 Testing: Balls
 1/7 Test: Balls
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/balls.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget
-"Balls" start time: Feb 04 19:18 EST
+"Balls" start time: Feb 01 16:44 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 0 match(es)
@@ -14,13 +14,13 @@ Match at: [568, 197]
 red ball finder found 1 match(es)
 Match at: [196, 182]
 <end of output>
-Test time =   0.08 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
 Test Pass Reason:
 Required regular expression found.Regex=[horiz target finder found 0 match(es)*
 vert target finder found 0 match(es)*
 ]
-"Balls" end time: Feb 04 19:18 EST
+"Balls" end time: Feb 01 16:44 EST
 "Balls" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -28,7 +28,7 @@ vert target finder found 0 match(es)*
 2/7 Test: BlueBall
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/blueball.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget
-"BlueBall" start time: Feb 04 19:18 EST
+"BlueBall" start time: Feb 01 16:44 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 0 match(es)
@@ -37,14 +37,14 @@ blue ball finder found 1 match(es)
 Match at: [331, 335]
 red ball finder found 0 match(es)
 <end of output>
-Test time =   0.08 sec
+Test time =   0.07 sec
 ----------------------------------------------------------
 Test Pass Reason:
 Required regular expression found.Regex=[horiz target finder found 0 match(es)*
 vert target finder found 0 match(es)*
 red ball finder found 0 match(es)*
 ]
-"BlueBall" end time: Feb 04 19:18 EST
+"BlueBall" end time: Feb 01 16:44 EST
 "BlueBall" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -52,7 +52,7 @@ red ball finder found 0 match(es)*
 3/7 Test: Target1
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/target1.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget
-"Target1" start time: Feb 04 19:18 EST
+"Target1" start time: Feb 01 16:44 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 1 match(es)
@@ -68,7 +68,7 @@ Test Pass Reason:
 Required regular expression found.Regex=[red ball finder found 0 match(es)*
 blue ball finder found 0 match(es)*
 ]
-"Target1" end time: Feb 04 19:18 EST
+"Target1" end time: Feb 01 16:44 EST
 "Target1" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -76,7 +76,7 @@ blue ball finder found 0 match(es)*
 4/7 Test: Balls3
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/balls3.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget
-"Balls3" start time: Feb 04 19:18 EST
+"Balls3" start time: Feb 01 16:44 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 0 match(es)
@@ -92,7 +92,7 @@ Required regular expression found.Regex=[horiz target finder found 0 match(es)*
 vert target finder found 0 match(es)*
 blue ball finder found 0 match(es)*
 ]
-"Balls3" end time: Feb 04 19:18 EST
+"Balls3" end time: Feb 01 16:44 EST
 "Balls3" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -100,7 +100,7 @@ blue ball finder found 0 match(es)*
 5/7 Test: ballOnChair
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/ballOnChair.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget
-"ballOnChair" start time: Feb 04 19:18 EST
+"ballOnChair" start time: Feb 01 16:44 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 0 match(es)
@@ -116,7 +116,7 @@ Required regular expression found.Regex=[horiz target finder found 0 match(es)*
 vert target finder found 0 match(es)*
 red ball finder found 0 match(es)*
 ]
-"ballOnChair" end time: Feb 04 19:18 EST
+"ballOnChair" end time: Feb 01 16:44 EST
 "ballOnChair" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -124,7 +124,7 @@ red ball finder found 0 match(es)*
 6/7 Test: Target2
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/target2.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget
-"Target2" start time: Feb 04 19:18 EST
+"Target2" start time: Feb 01 16:44 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 1 match(es)
@@ -140,7 +140,7 @@ Test Pass Reason:
 Required regular expression found.Regex=[red ball finder found 0 match(es)*
 blue ball finder found 0 match(es)*
 ]
-"Target2" end time: Feb 04 19:18 EST
+"Target2" end time: Feb 01 16:44 EST
 "Target2" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -148,7 +148,7 @@ blue ball finder found 0 match(es)*
 7/7 Test: FRC
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/run" "/home/jagen31/Robotics/HotTarget/HotTarget/FRC.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget
-"FRC" start time: Feb 04 19:18 EST
+"FRC" start time: Feb 01 16:44 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 1 match(es)
@@ -164,8 +164,8 @@ Test Pass Reason:
 Required regular expression found.Regex=[red ball finder found 0 match(es)*
 blue ball finder found 0 match(es)*
 ]
-"FRC" end time: Feb 04 19:18 EST
+"FRC" end time: Feb 01 16:44 EST
 "FRC" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Feb 04 19:18 EST
+End testing: Feb 01 16:44 EST

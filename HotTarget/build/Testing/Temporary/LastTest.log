@@ -1,27 +1,150 @@
-Start testing: Feb 01 14:14 EST
+Start testing: Feb 01 16:26 EST
 ----------------------------------------------------------
-1/1 Testing: Balls
-1/1 Test: Balls
+1/7 Testing: Balls
+1/7 Test: Balls
 Command: "/home/jagen31/Robotics/HotTarget/HotTarget/build/run" "/home/jagen31/Robotics/HotTarget/HotTarget/balls.jpg"
 Directory: /home/jagen31/Robotics/HotTarget/HotTarget/build
-"Balls" start time: Feb 01 14:14 EST
+"Balls" start time: Feb 01 16:26 EST
 Output:
 ----------------------------------------------------------
 horiz target finder found 0 match(es)
 vert target finder found 0 match(es)
 blue ball finder found 1 match(es)
-Match at: [568, 192]
+Match at: [568, 197]
 red ball finder found 1 match(es)
 Match at: [196, 182]
 <end of output>
-Test time =   3.52 sec
+Test time =   0.06 sec
 ----------------------------------------------------------
 Test Fail Reason:
-Required regular expression not found.Regex=[horiz target finder found 0 match(es)
-vert target finder found 0 match(es)
+Required regular expression not found.Regex=[red ball finder found 0 match(es)
+blue ball finder found 0 match(es)
 ]
-"Balls" end time: Feb 01 14:14 EST
-"Balls" time elapsed: 00:00:03
+"Balls" end time: Feb 01 16:26 EST
+"Balls" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Feb 01 14:14 EST
+2/7 Testing: BlueBall
+2/7 Test: BlueBall
+Command: "/home/jagen31/Robotics/HotTarget/HotTarget/build/run" "/home/jagen31/Robotics/HotTarget/HotTarget/blueball.jpg"
+Directory: /home/jagen31/Robotics/HotTarget/HotTarget/build
+"BlueBall" start time: Feb 01 16:26 EST
+Output:
+----------------------------------------------------------
+horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 1 match(es)
+Match at: [331, 335]
+red ball finder found 0 match(es)
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Failed.
+"BlueBall" end time: Feb 01 16:26 EST
+"BlueBall" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: Target1
+3/7 Test: Target1
+Command: "/home/jagen31/Robotics/HotTarget/HotTarget/build/run" "/home/jagen31/Robotics/HotTarget/HotTarget/target1.jpg"
+Directory: /home/jagen31/Robotics/HotTarget/HotTarget/build
+"Target1" start time: Feb 01 16:26 EST
+Output:
+----------------------------------------------------------
+horiz target finder found 1 match(es)
+Match at: [417, 204]
+vert target finder found 1 match(es)
+Match at: [386, 233]
+blue ball finder found 0 match(es)
+red ball finder found 0 match(es)
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"Target1" end time: Feb 01 16:26 EST
+"Target1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: Balls3
+4/7 Test: Balls3
+Command: "/home/jagen31/Robotics/HotTarget/HotTarget/build/run" "/home/jagen31/Robotics/HotTarget/HotTarget/balls3.jpg"
+Directory: /home/jagen31/Robotics/HotTarget/HotTarget/build
+"Balls3" start time: Feb 01 16:26 EST
+Output:
+----------------------------------------------------------
+horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 0 match(es)
+red ball finder found 1 match(es)
+Match at: [452, 135]
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Failed.
+"Balls3" end time: Feb 01 16:26 EST
+"Balls3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: ballOnChair
+5/7 Test: ballOnChair
+Command: "/home/jagen31/Robotics/HotTarget/HotTarget/build/run" "/home/jagen31/Robotics/HotTarget/HotTarget/ballOnChair.jpg"
+Directory: /home/jagen31/Robotics/HotTarget/HotTarget/build
+"ballOnChair" start time: Feb 01 16:26 EST
+Output:
+----------------------------------------------------------
+horiz target finder found 0 match(es)
+vert target finder found 0 match(es)
+blue ball finder found 1 match(es)
+Match at: [699, 658]
+red ball finder found 0 match(es)
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"ballOnChair" end time: Feb 01 16:26 EST
+"ballOnChair" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: Target2
+6/7 Test: Target2
+Command: "/home/jagen31/Robotics/HotTarget/HotTarget/build/run" "/home/jagen31/Robotics/HotTarget/HotTarget/target2.jpg"
+Directory: /home/jagen31/Robotics/HotTarget/HotTarget/build
+"Target2" start time: Feb 01 16:26 EST
+Output:
+----------------------------------------------------------
+horiz target finder found 1 match(es)
+Match at: [267, 128]
+vert target finder found 1 match(es)
+Match at: [221, 164]
+blue ball finder found 0 match(es)
+red ball finder found 0 match(es)
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"Target2" end time: Feb 01 16:26 EST
+"Target2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: FRC
+7/7 Test: FRC
+Command: "/home/jagen31/Robotics/HotTarget/HotTarget/build/run" "/home/jagen31/Robotics/HotTarget/HotTarget/FRC.jpg"
+Directory: /home/jagen31/Robotics/HotTarget/HotTarget/build
+"FRC" start time: Feb 01 16:26 EST
+Output:
+----------------------------------------------------------
+horiz target finder found 1 match(es)
+Match at: [402, 227]
+vert target finder found 1 match(es)
+Match at: [369, 257]
+blue ball finder found 0 match(es)
+red ball finder found 0 match(es)
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"FRC" end time: Feb 01 16:26 EST
+"FRC" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 01 16:26 EST

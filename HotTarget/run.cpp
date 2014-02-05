@@ -11,131 +11,89 @@
 #include <opencv/cv.h>
 using namespace std;
 using namespace cv;
-ImageObject* red_ball = new RedBall();
-ImageObject* blue_ball = new BlueBall();
-ImageObject* horiz_target = new HorizHotTarget();
-ImageObject* vert_target = new VertHotTarget();
 
-ImageAnalyzer red_ball_finder(red_ball);
-ImageAnalyzer blue_ball_finder(blue_ball);
-ImageAnalyzer horiz_target_finder(horiz_target);
-ImageAnalyzer vert_target_finder(vert_target);
-
-ScoreAnalyzer red_ball_scorer(red_ball);
-ScoreAnalyzer blue_ball_scorer(blue_ball);
-ScoreAnalyzer horiz_target_scorer(horiz_target);
-ScoreAnalyzer vert_target_scorer(vert_target);
-
-ImageGateway image_handler;
-
-bool read_image(Mat container, string filename);
-void report_scores(ScoreAnalyzer analyzer,string findername,Mat image);
+bool read_image(Mat container, char* filename);
+void report_scores(ScoreAnalyzer analyzer, char* findername);
 void init_handlers();
-int cameraEnabled();
-int cameraDisabled(string str);
+int cameraEnabled(char** argv);
+int cameraDisabled(char** argv);
+void constructObject(char* name,ImageObject* object);
+void searchImage(ImageAnalyzer analyzer, ScoreAnalyzer scorer, Mat image);
 
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
-    init_handlers();
-    int code;
-    if(argc==1)
-        code=cameraEnabled();
-    for(int i=0;i<argc-1;++i)
-        code=cameraDisabled(argv[i+1]);
-    delete red_ball;
-    delete blue_ball;
-    delete horiz_target;
-    delete vert_target;
-    return code;
+    if(argc>=2)
+        return cameraDisabled(argv);
+    return cameraEnabled(argv);
 }
-int cameraEnabled()
+
+VideoCapture capture()
 {
+
 	VideoCapture cap("rtsp://192.168.0.100/axis-media/media.amp"); // open the axis camera
     if(!cap.isOpened()){  // check if we succeeded	
 		printf("Unable to get camera.\n");
 		return -1;
 	}
-	
-    Mat imageBGR;
-    #ifndef DEBUG_ON
-    for(;;){
-    #endif
-    imageBGR.release();
-	cap.read(imageBGR);
-    #ifdef DEBUG_ON
-    imwrite("DEBUG.jpg",imageBGR);
-    #endif
-    Mat image;
-    cvtColor(imageBGR,image,CV_BGR2HSV);
-		
-    image_handler.set_image(image); 
-    blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
-    red_ball_scorer.calculate_scores(red_ball_finder.get_image());
-    horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
-    vert_target_scorer.calculate_scores(vert_target_finder.get_image());
-
-    report_scores(blue_ball_scorer, "Blue ball finder",imageBGR);
-    report_scores(horiz_target_scorer,"Horizontal target finder",imageBGR);
-    report_scores(vert_target_scorer, "Vertical target finder",imageBGR);
-    report_scores(red_ball_scorer, "Red ball finder",imageBGR);
-
-    #ifdef DEBUG_ON
-    namedWindow("ex",WINDOW_AUTOSIZE);
-    imshow("ex",imageBGR);
-    waitKey(0);
-    #endif
-
-    #ifndef DEBUG_ON
-    }
-    #endif
-
     exit(0);
 }
 
-int cameraDisabled(string str)
+int cameraEnabled(char** argv)
 {
-
+    VideoCapture cap = capture();
     Mat image;
-    image =imread(str,CV_LOAD_IMAGE_COLOR);
-    cvtColor(image,image,CV_BGR2HSV);
-
-    horiz_target_finder.run_filter(image);
-    vert_target_finder.run_filter(image);
-    blue_ball_finder.run_filter(image);
-    red_ball_finder.run_filter(image);
-
-    horiz_target_scorer.calculate_scores(horiz_target_finder.get_image());
-    vert_target_scorer.calculate_scores(vert_target_finder.get_image());
-    blue_ball_scorer.calculate_scores(blue_ball_finder.get_image());
-    red_ball_scorer.calculate_scores(red_ball_finder.get_image());
-
-    report_scores(horiz_target_scorer,"horiz target finder",image);
-    report_scores(vert_target_scorer,"vert target finder",image);
-    report_scores(blue_ball_scorer,"blue ball finder",image);
-    report_scores(red_ball_scorer,"red ball finder",image);
-
-    cvtColor(image,image,CV_HSV2BGR);
-    namedWindow("show",WINDOW_AUTOSIZE);
-    imshow("show",image);
-    waitKey(0);
-    cvDestroyWindow("show");
+    ImageObject* object;
+    ImageAnalyzer analyzer(object);
+    ScoreAnalyzer scorer(object);
+    
+    cap.read(image);
+    constructObject(argv[1],object);
+    searchImage(analyzer, scorer, image);
+    delete object;
+    report_scores(scorer,argv[1]);
+    return 0;
 }
 
-void report_scores(ScoreAnalyzer scorer,string findername,Mat image)
+int cameraDisabled(char** argv)
+{
+    Mat image;
+    ImageObject* object;
+    ImageAnalyzer analyzer(object);
+    ScoreAnalyzer scorer(object);
+    
+    image = imread(argv[2],CV_LOAD_IMAGE_COLOR);
+    constructObject(argv[1],object);
+    searchImage(analyzer, scorer, image);
+    cout<<"Here"<<endl;
+    delete object;
+    report_scores(scorer,argv[1]);
+    return 0;
+}
+
+void constructObject(char* name,ImageObject* object)
+{
+    if(name=="redball")
+        object = new RedBall();
+    else if(name=="blueball")
+        object = new BlueBall();
+    else if(name=="verttarget")
+        object = new VertHotTarget();
+    else
+        object = new HorizHotTarget();
+}
+
+void searchImage(ImageAnalyzer analyzer, ScoreAnalyzer scorer, Mat image)
+{
+    analyzer.run_filter(image);
+    scorer.calculate_scores(analyzer.get_image());
+}
+
+void report_scores(ScoreAnalyzer scorer,char* findername)
 {
     vector<Score> scores=scorer.get_scores();
     cout << findername << " found " << scores.size() << " match(es)"<<endl;
     for(int i =0;i<scores.size();++i)
     {
         cout << "Match at: " << scores[i].position << endl;
-        circle(image,scores[i].position,10,Scalar(255,100,100),2);
     }
-}
-
-void init_handlers()
-{
-    image_handler.add_observer(&red_ball_finder);
-    image_handler.add_observer(&blue_ball_finder);
-    image_handler.add_observer(&horiz_target_finder);
-    image_handler.add_observer(&vert_target_finder);
 }
