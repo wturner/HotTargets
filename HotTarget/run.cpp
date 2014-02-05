@@ -18,7 +18,7 @@ void init_handlers();
 int cameraEnabled(char** argv);
 int cameraDisabled(char** argv);
 void constructObject(char* name,ImageObject* object);
-void searchImage(ImageAnalyzer analyzer, ScoreAnalyzer scorer, Mat image);
+void searchImage(ImageAnalyzer* analyzer, ScoreAnalyzer* scorer, Mat image);
 
 int main(int argc, char** argv)
 {
@@ -45,10 +45,13 @@ int cameraEnabled(char** argv)
     ImageObject* object;
     ImageAnalyzer analyzer(object);
     ScoreAnalyzer scorer(object);
-    
+
     cap.read(image);
+    cvtColor(image, image, CV_BGR2HSV);
     constructObject(argv[1],object);
-    searchImage(analyzer, scorer, image);
+    analyzer.set_object(object);
+    scorer.set_object(object);
+    searchImage(&analyzer, &scorer, image);
     delete object;
     report_scores(scorer,argv[1]);
     return 0;
@@ -56,15 +59,32 @@ int cameraEnabled(char** argv)
 
 int cameraDisabled(char** argv)
 {
-    Mat image;
     ImageObject* object;
     ImageAnalyzer analyzer(object);
     ScoreAnalyzer scorer(object);
+
+    Mat image = imread(argv[2]);
     
-    image = imread(argv[2],CV_LOAD_IMAGE_COLOR);
-    constructObject(argv[1],object);
-    searchImage(analyzer, scorer, image);
-    cout<<"Here"<<endl;
+    waitKey(0);
+    if(!image.data)
+    {
+        cout<<"Load fail"<<endl;
+        return -1;
+    }
+    cvtColor(image, image, CV_BGR2HSV);
+    
+    if(argv[1]=="redball")
+        object = new RedBall();
+    else if(argv[1]=="blueball")
+        object = new BlueBall();
+    else if(argv[1]=="verttarget")
+        object = new VertHotTarget();
+    else
+        object =  new HorizHotTarget();
+
+    analyzer.set_object(object);
+    scorer.set_object(object);
+    searchImage(&analyzer, &scorer, image);
     delete object;
     report_scores(scorer,argv[1]);
     return 0;
@@ -72,20 +92,12 @@ int cameraDisabled(char** argv)
 
 void constructObject(char* name,ImageObject* object)
 {
-    if(name=="redball")
-        object = new RedBall();
-    else if(name=="blueball")
-        object = new BlueBall();
-    else if(name=="verttarget")
-        object = new VertHotTarget();
-    else
-        object = new HorizHotTarget();
 }
 
-void searchImage(ImageAnalyzer analyzer, ScoreAnalyzer scorer, Mat image)
+void searchImage(ImageAnalyzer* analyzer, ScoreAnalyzer* scorer, Mat image)
 {
-    analyzer.run_filter(image);
-    scorer.calculate_scores(analyzer.get_image());
+    analyzer->run_filter(image);
+    scorer->calculate_scores(analyzer->get_image());
 }
 
 void report_scores(ScoreAnalyzer scorer,char* findername)

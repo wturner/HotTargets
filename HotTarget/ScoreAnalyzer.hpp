@@ -21,8 +21,14 @@ class ScoreAnalyzer:
 public Observer<Mat>
 {
     public:
+        ScoreAnalyzer(){}
 
         ScoreAnalyzer(ImageObject* object)
+        {
+            this->object_=object;
+        }
+
+        void set_object(ImageObject* object)
         {
             this->object_=object;
         }

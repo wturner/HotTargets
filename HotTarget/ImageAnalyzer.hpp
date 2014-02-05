@@ -26,6 +26,7 @@ public Observer<Mat>
         }
 
     public:
+        ImageAnalyzer(){}
         ImageAnalyzer(ImageObject* object)
         {
             this->object_=object;
