@@ -1,9 +1,16 @@
-Balls 22 0.00346109
-BlueBall 7 0.0108504
-Target1 6 0.00894833
+Balls 22 0
+BlueBall 7 0
+Target1 6 0
 Balls4 0 0
-Balls3 8 0.012299
-ballOnChair 6 0.0282342
-Target2 7 0.00757057
-FRC 6 0.0087988
+Balls3 8 0
+ballOnChair 6 0
+Target2 7 0
+FRC 6 0
 ---
+Balls
+BlueBall
+Target1
+Balls3
+ballOnChair
+Target2
+FRC

@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/jagen31/Robotics/HotTarget/HotTarget/ImageAnalyzer.cpp
+ImageAnalyzer.hpp
+/home/jagen31/Robotics/HotTarget/HotTarget/ImageAnalyzer.hpp
+opencv2/core/core.hpp
+-
+opencv2/imgproc/imgproc.hpp
+-
+iostream
+-
+opencv2/highgui/highgui.hpp
+-
+
 /home/jagen31/Robotics/HotTarget/HotTarget/ImageAnalyzer.hpp
 opencv2/core/core.hpp
 -
@@ -45,6 +57,10 @@ Observer.hpp
 /home/jagen31/Robotics/HotTarget/HotTarget/Observer.hpp
 
 /home/jagen31/Robotics/HotTarget/HotTarget/Observer.hpp
+
+/home/jagen31/Robotics/HotTarget/HotTarget/ScoreAnalyzer.cpp
+ScoreAnalyzer.hpp
+/home/jagen31/Robotics/HotTarget/HotTarget/ScoreAnalyzer.hpp
 
 /home/jagen31/Robotics/HotTarget/HotTarget/ScoreAnalyzer.hpp
 Observer.hpp

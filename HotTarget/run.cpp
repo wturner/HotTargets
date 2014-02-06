@@ -63,15 +63,16 @@ int cameraDisabled(char** argv)
     ImageAnalyzer analyzer(object);
     ScoreAnalyzer scorer(object);
 
-    Mat image = imread(argv[2]);
+    Mat imageBGR = imread(argv[2]);
     
     waitKey(0);
-    if(!image.data)
+    if(!imageBGR.data)
     {
         cout<<"Load fail"<<endl;
         return -1;
     }
-    cvtColor(image, image, CV_BGR2HSV);
+    Mat image;
+    cvtColor(imageBGR, image, CV_BGR2HSV);
     
     if(argv[1]=="redball")
         object = new RedBall();
@@ -85,7 +86,7 @@ int cameraDisabled(char** argv)
     analyzer.set_object(object);
     scorer.set_object(object);
     searchImage(&analyzer, &scorer, image);
-    delete object;
+    //delete object;
     report_scores(scorer,argv[1]);
     return 0;
 }

@@ -1,18 +1,12 @@
-Balls 0 0
-BlueBall 1 0
-Target1 0 0
+Balls 1 0.057127
+BlueBall 2 0.0369985
+Target1 1 0.058634
 Balls4 0 0
-Balls3 0 0
-ballOnChair 1 0.17367
+Balls3 1 0.106042
+ballOnChair 2 0.0927836
 oldballs 0 0
-Target2 1 0
-FRC 0 0
+Target2 2 0.0292366
+FRC 1 0.05582
 FeedBalls 0 0
 Debug 0 0
 ---
-Balls
-BlueBall
-Target1
-Balls3
-Target2
-FRC
