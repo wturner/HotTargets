@@ -23,6 +23,8 @@ public ImageObject
             getStructuringElement(MORPH_ELLIPSE,Size(15,15), 
             Point(0,0)),a1,a2){}
 
+        //TODO this area theshold may need to change depending on low resolution
+
         double calculate_area(double width, double height)
         {
             int avgRadius = (width/2+height/2)/2;
