@@ -66,6 +66,9 @@ public ImageObject
     private:
         double ratio_;
     public:
+    
+        //the kernels might also need to change
+        
         HotTarget(double ratio) : ImageObject(Scalar(82,10,80),Scalar(89,255,255),Mat::ones(5,5,CV_8U))
         {
             this->ratio_=ratio;
