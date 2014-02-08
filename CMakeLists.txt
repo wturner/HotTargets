@@ -12,6 +12,10 @@ find_package(OpenCV REQUIRED)
 #Referencing source directories
 add_subdirectory(src)
 
+#Variables for linking and referencing the network-tables library (Pierre's Laptop)
+set(NetworkTables_LIB_DIR "NetworkTables_LIB_DIR-NOT_FOUND" CACHE PATH)
+set(NetworkTables_INC_DIR "NetworkTables_INC_DIR-NOT_FOUND" CACHE PATH)
+                             
 #Enabling Testing
 add_subdirectory(images)
 enable_testing()

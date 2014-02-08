@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/jagen31/Robotics/HotTarget
-BuildDirectory: /home/jagen31/Robotics/HotTarget
+SourceDirectory: /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets
+BuildDirectory: /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: j-arch
+Site: pierre-300E4C-300E5C-300E7C
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -33,7 +33,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 01:00:00 UTC
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/jagen31/Robotics/HotTarget"
+ConfigureCommand: "/usr/bin/cmake" "/home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets"
 MakeCommand: /usr/bin/make -i
 DefaultCTestConfigurationType: Release
 

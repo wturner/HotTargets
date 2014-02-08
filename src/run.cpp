@@ -81,7 +81,7 @@ int cameraDisabled(char** argv)
     ImageAnalyzer analyzer;
     ScoreAnalyzer scorer;
 
-    Mat imageBGR = imread(argv[2],CV_LOAD_IMAGE_COLOR);
+    Mat imageBGR = imread(argv[2]);
     
     if(!imageBGR.data)
     {
