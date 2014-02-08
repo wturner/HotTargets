@@ -42,14 +42,14 @@ Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
     //Mat erode = erode_image(blur, obj->get_kernel());
     Mat erode = erode_image(thresh, obj->get_kernel());
     //Get the remaining blobs from the image
-    ImageAndContours contours = run_contour_search(erode);
+    //ImageAndContours contours = run_contour_search(erode);
     //Erase, from the blobs remaining, ones that are under a reasonable area
     //restore eroded blobs to original size
     //Mat dilated = dilate_image(erased,obj->get_kernel());
     //return filtered image
     //return dilated;
-    Mat erased = erase_contours(contours);
-    return erased;
+    //Mat erased = erase_contours(contours);
+    return erode;
 }
 
 Mat blur_image(Mat image,int value)

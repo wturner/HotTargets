@@ -15,8 +15,6 @@ opencv2/imgproc/imgproc.hpp
 -
 iostream
 -
-opencv2/highgui/highgui.hpp
--
 
 /home/jagen31/Robotics/HotTarget/src/ImageAnalyzer.hpp
 opencv2/core/core.hpp
@@ -58,10 +56,6 @@ Observer.hpp
 
 /home/jagen31/Robotics/HotTarget/src/Observer.hpp
 
-/home/jagen31/Robotics/HotTarget/src/ScoreAnalyzer.cpp
-ScoreAnalyzer.hpp
-/home/jagen31/Robotics/HotTarget/src/ScoreAnalyzer.hpp
-
 /home/jagen31/Robotics/HotTarget/src/ScoreAnalyzer.hpp
 Observer.hpp
 /home/jagen31/Robotics/HotTarget/src/Observer.hpp
@@ -79,6 +73,8 @@ ImageAnalyzer.hpp
 /home/jagen31/Robotics/HotTarget/src/ImageAnalyzer.hpp
 string.h
 -
+opencv2/highgui/highgui.hpp
+-
 ScoreAnalyzer.hpp
 /home/jagen31/Robotics/HotTarget/src/ScoreAnalyzer.hpp
 ImageObjects.hpp
@@ -88,8 +84,6 @@ ImageObject.hpp
 ImageGateway.hpp
 /home/jagen31/Robotics/HotTarget/src/ImageGateway.hpp
 csignal
--
-opencv2/highgui/highgui.hpp
 -
 opencv2/core/core.hpp
 -
