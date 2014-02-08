@@ -1,0 +1,16 @@
+BlueBall1 1 0.125442
+BlueBall2 1 0.0417509
+BlueBall3 1 0.046416
+RedBalls1 1 0.0400081
+RedBalls2 1 0.0605891
+HorizontalTarget1 1 0.0376182
+HorizontalTarget2 1 0.0367432
+HorizontalTarget3 1 0.0367131
+HorizontalTarget4 1 0.0367391
+HorizontalTarget5 1 0.037302
+VerticalTarget1 1 0.036263
+VerticalTarget2 1 0.03671
+VerticalTarget3 1 0.037122
+VerticalTarget4 1 0.0367301
+VerticalTarget5 1 0.0370362
+---

@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
 project(HotTargets)
 
+option(DISP_IMAGE "Display images" off)
+if(DISP_IMAGE)
+    set(CXX_COMPILER_FLAGS ${CXX_COMPILER_FLAGS} -DDEBUG_ON)
+endif(DISP_IMAGE)
+
 #Requiring OpenCV
 find_package(OpenCV REQUIRED)
 
@@ -36,4 +41,3 @@ vertical_target(VerticalTarget2 image.jpg)
 vertical_target(VerticalTarget3 image4.jpg)
 vertical_target(VerticalTarget4 target1.jpg)
 vertical_target(VerticalTarget5 target2.jpg)
-vertical_target(VerticalTarget6 DEBUG.jpg)

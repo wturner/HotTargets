@@ -1,0 +1,258 @@
+Start testing: Feb 07 20:39 EST
+----------------------------------------------------------
+1/15 Testing: BlueBall1
+1/15 Test: BlueBall1
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "blueball" "/home/jagen31/Robotics/HotTarget/images/ballOnChair.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"BlueBall1" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+blueball found 1 match(es)
+Match at: [699, 658]
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"BlueBall1" end time: Feb 07 20:39 EST
+"BlueBall1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/15 Testing: BlueBall2
+2/15 Test: BlueBall2
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "blueball" "/home/jagen31/Robotics/HotTarget/images/balls.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"BlueBall2" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+blueball found 1 match(es)
+Match at: [568, 197]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"BlueBall2" end time: Feb 07 20:39 EST
+"BlueBall2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/15 Testing: BlueBall3
+3/15 Test: BlueBall3
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "blueball" "/home/jagen31/Robotics/HotTarget/images/blueball.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"BlueBall3" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+blueball found 1 match(es)
+Match at: [331, 335]
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"BlueBall3" end time: Feb 07 20:39 EST
+"BlueBall3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/15 Testing: RedBalls1
+4/15 Test: RedBalls1
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "redball" "/home/jagen31/Robotics/HotTarget/images/balls.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"RedBalls1" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+redball found 1 match(es)
+Match at: [196, 182]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"RedBalls1" end time: Feb 07 20:39 EST
+"RedBalls1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/15 Testing: RedBalls2
+5/15 Test: RedBalls2
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "redball" "/home/jagen31/Robotics/HotTarget/images/balls3.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"RedBalls2" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+redball found 1 match(es)
+Match at: [452, 135]
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"RedBalls2" end time: Feb 07 20:39 EST
+"RedBalls2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/15 Testing: HorizontalTarget1
+6/15 Test: HorizontalTarget1
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "horiztarget" "/home/jagen31/Robotics/HotTarget/images/FRC.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"HorizontalTarget1" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+horiztarget found 1 match(es)
+Match at: [402, 227]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"HorizontalTarget1" end time: Feb 07 20:39 EST
+"HorizontalTarget1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/15 Testing: HorizontalTarget2
+7/15 Test: HorizontalTarget2
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "horiztarget" "/home/jagen31/Robotics/HotTarget/images/image.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"HorizontalTarget2" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+horiztarget found 1 match(es)
+Match at: [267, 128]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"HorizontalTarget2" end time: Feb 07 20:39 EST
+"HorizontalTarget2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/15 Testing: HorizontalTarget3
+8/15 Test: HorizontalTarget3
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "horiztarget" "/home/jagen31/Robotics/HotTarget/images/image4.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"HorizontalTarget3" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+horiztarget found 1 match(es)
+Match at: [417, 204]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"HorizontalTarget3" end time: Feb 07 20:39 EST
+"HorizontalTarget3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/15 Testing: HorizontalTarget4
+9/15 Test: HorizontalTarget4
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "horiztarget" "/home/jagen31/Robotics/HotTarget/images/target1.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"HorizontalTarget4" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+horiztarget found 1 match(es)
+Match at: [417, 204]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"HorizontalTarget4" end time: Feb 07 20:39 EST
+"HorizontalTarget4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/15 Testing: HorizontalTarget5
+10/15 Test: HorizontalTarget5
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "horiztarget" "/home/jagen31/Robotics/HotTarget/images/target2.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"HorizontalTarget5" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+horiztarget found 1 match(es)
+Match at: [267, 128]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"HorizontalTarget5" end time: Feb 07 20:39 EST
+"HorizontalTarget5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/15 Testing: VerticalTarget1
+11/15 Test: VerticalTarget1
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "verttarget" "/home/jagen31/Robotics/HotTarget/images/FRC.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"VerticalTarget1" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+verttarget found 1 match(es)
+Match at: [369, 257]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"VerticalTarget1" end time: Feb 07 20:39 EST
+"VerticalTarget1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/15 Testing: VerticalTarget2
+12/15 Test: VerticalTarget2
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "verttarget" "/home/jagen31/Robotics/HotTarget/images/image.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"VerticalTarget2" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+verttarget found 1 match(es)
+Match at: [221, 164]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"VerticalTarget2" end time: Feb 07 20:39 EST
+"VerticalTarget2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/15 Testing: VerticalTarget3
+13/15 Test: VerticalTarget3
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "verttarget" "/home/jagen31/Robotics/HotTarget/images/image4.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"VerticalTarget3" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+verttarget found 1 match(es)
+Match at: [386, 233]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"VerticalTarget3" end time: Feb 07 20:39 EST
+"VerticalTarget3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/15 Testing: VerticalTarget4
+14/15 Test: VerticalTarget4
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "verttarget" "/home/jagen31/Robotics/HotTarget/images/target1.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"VerticalTarget4" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+verttarget found 1 match(es)
+Match at: [386, 233]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"VerticalTarget4" end time: Feb 07 20:39 EST
+"VerticalTarget4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/15 Testing: VerticalTarget5
+15/15 Test: VerticalTarget5
+Command: "/home/jagen31/Robotics/HotTarget/src/run" "verttarget" "/home/jagen31/Robotics/HotTarget/images/target2.jpg"
+Directory: /home/jagen31/Robotics/HotTarget
+"VerticalTarget5" start time: Feb 07 20:39 EST
+Output:
+----------------------------------------------------------
+verttarget found 1 match(es)
+Match at: [221, 164]
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"VerticalTarget5" end time: Feb 07 20:39 EST
+"VerticalTarget5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 07 20:39 EST
