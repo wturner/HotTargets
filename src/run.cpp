@@ -116,7 +116,6 @@ int cameraDisabled(char** argv)
 void searchImage(ImageAnalyzer* analyzer, ScoreAnalyzer* scorer, Mat image)
 {
     analyzer->run_filter(image);
-    
     scorer->calculate_scores(analyzer->get_image());
 }
 
