@@ -1,3 +1,6 @@
+#ifndef NETWORK_TABLE_HPP
+#define NETWORK_TABLE_HPP
+
 #include <iostream>
 #include <tables/ITable.h>
 #include <string>
@@ -8,6 +11,25 @@ using namespace std;
 class NetworkTable{
    
    public:
+        namespace {
+                static const string redBallXKey = "redBallX";
+                static const string redBallYKey = "redBallY";
+                static const string redBallDetection = "redBallDetected";
+               
+                static const string blueBallXKey = "blueBallX";
+                static const string blueBallYKey = "blueBallY";
+                static const string blueBallDetection = "blueBallDetected";
+                 
+                static const string horizontalXKey = "horizontalX";
+                static const string horizontalYKey = "horizontalY";
+                static const string horizontalDetection = "horizontalDetected";
+
+                static const string verticalXKey = "verticalX";
+                static const string verticalYKey = "verticalY";
+                static const string verticalDetection = "verticalDetected";
+
+        } 
+
         string ipAdress;
 
         string tableID;       
@@ -16,12 +38,12 @@ class NetworkTable{
         ITable * table;
         
         //sends the point
-        void sendPoint(int x, int y);
-        void sendIfDetected(bool detected);
+        void sendPoint(int x, int y, string key);
+        void sendDetection(bool detected, string key);
 }
+#endif
 
-
-Argument Parser
+//Argument Parser if ever needed
 /*
       //argument parser
         for(int i = 0; i < argc; i++){

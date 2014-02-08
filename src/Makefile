@@ -39,13 +39,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jagen31/Robotics/HotTarget
+CMAKE_SOURCE_DIR = /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jagen31/Robotics/HotTarget
+CMAKE_BINARY_DIR = /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/jagen31/Robotics/HotTarget
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,26 +70,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/jagen31/Robotics/HotTarget && $(CMAKE_COMMAND) -E cmake_progress_start /home/jagen31/Robotics/HotTarget/CMakeFiles /home/jagen31/Robotics/HotTarget/src/CMakeFiles/progress.marks
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jagen31/Robotics/HotTarget/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	$(MAKE) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
 # The main clean target
@@ -98,31 +88,30 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jagen31/Robotics/HotTarget && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-src/CMakeFiles/run.dir/rule:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/run.dir/rule
-.PHONY : src/CMakeFiles/run.dir/rule
+#=============================================================================
+# Target rules for targets named run
 
-# Convenience name for target.
-run: src/CMakeFiles/run.dir/rule
+# Build rule for target.
+run: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run
 .PHONY : run
 
 # fast build rule for target.
 run/fast:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/build
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
 ImageAnalyzer.o: ImageAnalyzer.cpp.o
@@ -130,7 +119,7 @@ ImageAnalyzer.o: ImageAnalyzer.cpp.o
 
 # target to build an object file
 ImageAnalyzer.cpp.o:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ImageAnalyzer.cpp.o
 .PHONY : ImageAnalyzer.cpp.o
 
 ImageAnalyzer.i: ImageAnalyzer.cpp.i
@@ -138,7 +127,7 @@ ImageAnalyzer.i: ImageAnalyzer.cpp.i
 
 # target to preprocess a source file
 ImageAnalyzer.cpp.i:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ImageAnalyzer.cpp.i
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ImageAnalyzer.cpp.i
 .PHONY : ImageAnalyzer.cpp.i
 
 ImageAnalyzer.s: ImageAnalyzer.cpp.s
@@ -146,15 +135,39 @@ ImageAnalyzer.s: ImageAnalyzer.cpp.s
 
 # target to generate assembly for a file
 ImageAnalyzer.cpp.s:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ImageAnalyzer.cpp.s
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ImageAnalyzer.cpp.s
 .PHONY : ImageAnalyzer.cpp.s
+
+NetworkTable.o: NetworkTable.cpp.o
+.PHONY : NetworkTable.o
+
+# target to build an object file
+NetworkTable.cpp.o:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/NetworkTable.cpp.o
+.PHONY : NetworkTable.cpp.o
+
+NetworkTable.i: NetworkTable.cpp.i
+.PHONY : NetworkTable.i
+
+# target to preprocess a source file
+NetworkTable.cpp.i:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/NetworkTable.cpp.i
+.PHONY : NetworkTable.cpp.i
+
+NetworkTable.s: NetworkTable.cpp.s
+.PHONY : NetworkTable.s
+
+# target to generate assembly for a file
+NetworkTable.cpp.s:
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/NetworkTable.cpp.s
+.PHONY : NetworkTable.cpp.s
 
 ScoreAnalyzer.o: ScoreAnalyzer.cpp.o
 .PHONY : ScoreAnalyzer.o
 
 # target to build an object file
 ScoreAnalyzer.cpp.o:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ScoreAnalyzer.cpp.o
 .PHONY : ScoreAnalyzer.cpp.o
 
 ScoreAnalyzer.i: ScoreAnalyzer.cpp.i
@@ -162,7 +175,7 @@ ScoreAnalyzer.i: ScoreAnalyzer.cpp.i
 
 # target to preprocess a source file
 ScoreAnalyzer.cpp.i:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.i
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ScoreAnalyzer.cpp.i
 .PHONY : ScoreAnalyzer.cpp.i
 
 ScoreAnalyzer.s: ScoreAnalyzer.cpp.s
@@ -170,7 +183,7 @@ ScoreAnalyzer.s: ScoreAnalyzer.cpp.s
 
 # target to generate assembly for a file
 ScoreAnalyzer.cpp.s:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.s
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ScoreAnalyzer.cpp.s
 .PHONY : ScoreAnalyzer.cpp.s
 
 run.o: run.cpp.o
@@ -178,7 +191,7 @@ run.o: run.cpp.o
 
 # target to build an object file
 run.cpp.o:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/run.cpp.o
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/run.cpp.o
 .PHONY : run.cpp.o
 
 run.i: run.cpp.i
@@ -186,7 +199,7 @@ run.i: run.cpp.i
 
 # target to preprocess a source file
 run.cpp.i:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/run.cpp.i
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/run.cpp.i
 .PHONY : run.cpp.i
 
 run.s: run.cpp.s
@@ -194,7 +207,7 @@ run.s: run.cpp.s
 
 # target to generate assembly for a file
 run.cpp.s:
-	cd /home/jagen31/Robotics/HotTarget && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/run.cpp.s
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/run.cpp.s
 .PHONY : run.cpp.s
 
 # Help Target
@@ -206,10 +219,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
-	@echo "... test"
 	@echo "... ImageAnalyzer.o"
 	@echo "... ImageAnalyzer.i"
 	@echo "... ImageAnalyzer.s"
+	@echo "... NetworkTable.o"
+	@echo "... NetworkTable.i"
+	@echo "... NetworkTable.s"
 	@echo "... ScoreAnalyzer.o"
 	@echo "... ScoreAnalyzer.i"
 	@echo "... ScoreAnalyzer.s"
@@ -227,6 +242,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jagen31/Robotics/HotTarget && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

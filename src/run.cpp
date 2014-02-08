@@ -10,8 +10,13 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include<iostream>
 #include <opencv/cv.h>
+#include "NetTable.hpp"
+
 using namespace std;
 using namespace cv;
+
+//the NetworkTable (table ID is set by default)
+//NetworkTable * table = new NetworkTable();
 
 ImageObject* red_ball = new RedBall();
 ImageObject* blue_ball = new BlueBall();

@@ -35,162 +35,149 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jagen31/Robotics/HotTarget
+CMAKE_SOURCE_DIR = /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jagen31/Robotics/HotTarget
+CMAKE_BINARY_DIR = /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src
 
 # Include any dependencies generated for this target.
-include src/CMakeFiles/run.dir/depend.make
+include CMakeFiles/run.dir/depend.make
 
 # Include the progress variables for this target.
-include src/CMakeFiles/run.dir/progress.make
+include CMakeFiles/run.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include src/CMakeFiles/run.dir/flags.make
+include CMakeFiles/run.dir/flags.make
 
-src/CMakeFiles/run.dir/run.cpp.o: src/CMakeFiles/run.dir/flags.make
-src/CMakeFiles/run.dir/run.cpp.o: src/run.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jagen31/Robotics/HotTarget/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/run.cpp.o"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/run.cpp.o -c /home/jagen31/Robotics/HotTarget/src/run.cpp
+CMakeFiles/run.dir/run.cpp.o: CMakeFiles/run.dir/flags.make
+CMakeFiles/run.dir/run.cpp.o: run.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run.dir/run.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/run.cpp.o -c /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/run.cpp
 
-src/CMakeFiles/run.dir/run.cpp.i: cmake_force
+CMakeFiles/run.dir/run.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run.dir/run.cpp.i"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jagen31/Robotics/HotTarget/src/run.cpp > CMakeFiles/run.dir/run.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/run.cpp > CMakeFiles/run.dir/run.cpp.i
 
-src/CMakeFiles/run.dir/run.cpp.s: cmake_force
+CMakeFiles/run.dir/run.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run.dir/run.cpp.s"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jagen31/Robotics/HotTarget/src/run.cpp -o CMakeFiles/run.dir/run.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/run.cpp -o CMakeFiles/run.dir/run.cpp.s
 
-src/CMakeFiles/run.dir/run.cpp.o.requires:
-.PHONY : src/CMakeFiles/run.dir/run.cpp.o.requires
+CMakeFiles/run.dir/run.cpp.o.requires:
+.PHONY : CMakeFiles/run.dir/run.cpp.o.requires
 
-src/CMakeFiles/run.dir/run.cpp.o.provides: src/CMakeFiles/run.dir/run.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/run.cpp.o.provides.build
-.PHONY : src/CMakeFiles/run.dir/run.cpp.o.provides
+CMakeFiles/run.dir/run.cpp.o.provides: CMakeFiles/run.dir/run.cpp.o.requires
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/run.cpp.o.provides.build
+.PHONY : CMakeFiles/run.dir/run.cpp.o.provides
 
-src/CMakeFiles/run.dir/run.cpp.o.provides.build: src/CMakeFiles/run.dir/run.cpp.o
+CMakeFiles/run.dir/run.cpp.o.provides.build: CMakeFiles/run.dir/run.cpp.o
 
-src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o: src/CMakeFiles/run.dir/flags.make
-src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o: src/ImageAnalyzer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jagen31/Robotics/HotTarget/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/ImageAnalyzer.cpp.o -c /home/jagen31/Robotics/HotTarget/src/ImageAnalyzer.cpp
+CMakeFiles/run.dir/ImageAnalyzer.cpp.o: CMakeFiles/run.dir/flags.make
+CMakeFiles/run.dir/ImageAnalyzer.cpp.o: ImageAnalyzer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run.dir/ImageAnalyzer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/ImageAnalyzer.cpp.o -c /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/ImageAnalyzer.cpp
 
-src/CMakeFiles/run.dir/ImageAnalyzer.cpp.i: cmake_force
+CMakeFiles/run.dir/ImageAnalyzer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run.dir/ImageAnalyzer.cpp.i"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jagen31/Robotics/HotTarget/src/ImageAnalyzer.cpp > CMakeFiles/run.dir/ImageAnalyzer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/ImageAnalyzer.cpp > CMakeFiles/run.dir/ImageAnalyzer.cpp.i
 
-src/CMakeFiles/run.dir/ImageAnalyzer.cpp.s: cmake_force
+CMakeFiles/run.dir/ImageAnalyzer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run.dir/ImageAnalyzer.cpp.s"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jagen31/Robotics/HotTarget/src/ImageAnalyzer.cpp -o CMakeFiles/run.dir/ImageAnalyzer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/ImageAnalyzer.cpp -o CMakeFiles/run.dir/ImageAnalyzer.cpp.s
 
-src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires:
-.PHONY : src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires
+CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires:
+.PHONY : CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires
 
-src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides: src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides.build
-.PHONY : src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides
+CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides: CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides.build
+.PHONY : CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides
 
-src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides.build: src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o
+CMakeFiles/run.dir/ImageAnalyzer.cpp.o.provides.build: CMakeFiles/run.dir/ImageAnalyzer.cpp.o
 
-src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o: src/CMakeFiles/run.dir/flags.make
-src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o: src/ScoreAnalyzer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jagen31/Robotics/HotTarget/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/ScoreAnalyzer.cpp.o -c /home/jagen31/Robotics/HotTarget/src/ScoreAnalyzer.cpp
+CMakeFiles/run.dir/ScoreAnalyzer.cpp.o: CMakeFiles/run.dir/flags.make
+CMakeFiles/run.dir/ScoreAnalyzer.cpp.o: ScoreAnalyzer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run.dir/ScoreAnalyzer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/ScoreAnalyzer.cpp.o -c /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/ScoreAnalyzer.cpp
 
-src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.i: cmake_force
+CMakeFiles/run.dir/ScoreAnalyzer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run.dir/ScoreAnalyzer.cpp.i"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jagen31/Robotics/HotTarget/src/ScoreAnalyzer.cpp > CMakeFiles/run.dir/ScoreAnalyzer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/ScoreAnalyzer.cpp > CMakeFiles/run.dir/ScoreAnalyzer.cpp.i
 
-src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.s: cmake_force
+CMakeFiles/run.dir/ScoreAnalyzer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run.dir/ScoreAnalyzer.cpp.s"
-	cd /home/jagen31/Robotics/HotTarget/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jagen31/Robotics/HotTarget/src/ScoreAnalyzer.cpp -o CMakeFiles/run.dir/ScoreAnalyzer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/ScoreAnalyzer.cpp -o CMakeFiles/run.dir/ScoreAnalyzer.cpp.s
 
-src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires:
-.PHONY : src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires
+CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires:
+.PHONY : CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires
 
-src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides: src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides.build
-.PHONY : src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides
+CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides: CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides.build
+.PHONY : CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides
 
-src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides.build: src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o
+CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.provides.build: CMakeFiles/run.dir/ScoreAnalyzer.cpp.o
+
+CMakeFiles/run.dir/NetworkTable.cpp.o: CMakeFiles/run.dir/flags.make
+CMakeFiles/run.dir/NetworkTable.cpp.o: NetworkTable.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run.dir/NetworkTable.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/NetworkTable.cpp.o -c /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/NetworkTable.cpp
+
+CMakeFiles/run.dir/NetworkTable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run.dir/NetworkTable.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/NetworkTable.cpp > CMakeFiles/run.dir/NetworkTable.cpp.i
+
+CMakeFiles/run.dir/NetworkTable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run.dir/NetworkTable.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/NetworkTable.cpp -o CMakeFiles/run.dir/NetworkTable.cpp.s
+
+CMakeFiles/run.dir/NetworkTable.cpp.o.requires:
+.PHONY : CMakeFiles/run.dir/NetworkTable.cpp.o.requires
+
+CMakeFiles/run.dir/NetworkTable.cpp.o.provides: CMakeFiles/run.dir/NetworkTable.cpp.o.requires
+	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/NetworkTable.cpp.o.provides.build
+.PHONY : CMakeFiles/run.dir/NetworkTable.cpp.o.provides
+
+CMakeFiles/run.dir/NetworkTable.cpp.o.provides.build: CMakeFiles/run.dir/NetworkTable.cpp.o
 
 # Object files for target run
 run_OBJECTS = \
 "CMakeFiles/run.dir/run.cpp.o" \
 "CMakeFiles/run.dir/ImageAnalyzer.cpp.o" \
-"CMakeFiles/run.dir/ScoreAnalyzer.cpp.o"
+"CMakeFiles/run.dir/ScoreAnalyzer.cpp.o" \
+"CMakeFiles/run.dir/NetworkTable.cpp.o"
 
 # External object files for target run
 run_EXTERNAL_OBJECTS =
 
-src/run: src/CMakeFiles/run.dir/run.cpp.o
-src/run: src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o
-src/run: src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o
-src/run: src/CMakeFiles/run.dir/build.make
-src/run: /usr/lib/libopencv_videostab.so.2.4.8
-src/run: /usr/lib/libopencv_video.so.2.4.8
-src/run: /usr/lib/libopencv_ts.a
-src/run: /usr/lib/libopencv_superres.so.2.4.8
-src/run: /usr/lib/libopencv_stitching.so.2.4.8
-src/run: /usr/lib/libopencv_photo.so.2.4.8
-src/run: /usr/lib/libopencv_ocl.so.2.4.8
-src/run: /usr/lib/libopencv_objdetect.so.2.4.8
-src/run: /usr/lib/libopencv_nonfree.so.2.4.8
-src/run: /usr/lib/libopencv_ml.so.2.4.8
-src/run: /usr/lib/libopencv_legacy.so.2.4.8
-src/run: /usr/lib/libopencv_imgproc.so.2.4.8
-src/run: /usr/lib/libopencv_highgui.so.2.4.8
-src/run: /usr/lib/libopencv_gpu.so.2.4.8
-src/run: /usr/lib/libopencv_flann.so.2.4.8
-src/run: /usr/lib/libopencv_features2d.so.2.4.8
-src/run: /usr/lib/libopencv_core.so.2.4.8
-src/run: /usr/lib/libopencv_contrib.so.2.4.8
-src/run: /usr/lib/libopencv_calib3d.so.2.4.8
-src/run: /lib64/libGLU.so
-src/run: /lib64/libGL.so
-src/run: /lib64/libSM.so
-src/run: /lib64/libICE.so
-src/run: /lib64/libX11.so
-src/run: /lib64/libXext.so
-src/run: /usr/lib/libopencv_nonfree.so.2.4.8
-src/run: /usr/lib/libopencv_ocl.so.2.4.8
-src/run: /usr/lib/libopencv_gpu.so.2.4.8
-src/run: /usr/lib/libopencv_photo.so.2.4.8
-src/run: /usr/lib/libopencv_objdetect.so.2.4.8
-src/run: /usr/lib/libopencv_legacy.so.2.4.8
-src/run: /usr/lib/libopencv_video.so.2.4.8
-src/run: /usr/lib/libopencv_ml.so.2.4.8
-src/run: /usr/lib/libopencv_calib3d.so.2.4.8
-src/run: /usr/lib/libopencv_features2d.so.2.4.8
-src/run: /usr/lib/libopencv_highgui.so.2.4.8
-src/run: /usr/lib/libopencv_imgproc.so.2.4.8
-src/run: /usr/lib/libopencv_flann.so.2.4.8
-src/run: /usr/lib/libopencv_core.so.2.4.8
-src/run: src/CMakeFiles/run.dir/link.txt
+run: CMakeFiles/run.dir/run.cpp.o
+run: CMakeFiles/run.dir/ImageAnalyzer.cpp.o
+run: CMakeFiles/run.dir/ScoreAnalyzer.cpp.o
+run: CMakeFiles/run.dir/NetworkTable.cpp.o
+run: CMakeFiles/run.dir/build.make
+run: CMakeFiles/run.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable run"
-	cd /home/jagen31/Robotics/HotTarget/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run.dir/link.txt --verbose=$(VERBOSE)
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/run.dir/build: src/run
-.PHONY : src/CMakeFiles/run.dir/build
+CMakeFiles/run.dir/build: run
+.PHONY : CMakeFiles/run.dir/build
 
-src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/run.cpp.o.requires
-src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires
-src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires
-.PHONY : src/CMakeFiles/run.dir/requires
+CMakeFiles/run.dir/requires: CMakeFiles/run.dir/run.cpp.o.requires
+CMakeFiles/run.dir/requires: CMakeFiles/run.dir/ImageAnalyzer.cpp.o.requires
+CMakeFiles/run.dir/requires: CMakeFiles/run.dir/ScoreAnalyzer.cpp.o.requires
+CMakeFiles/run.dir/requires: CMakeFiles/run.dir/NetworkTable.cpp.o.requires
+.PHONY : CMakeFiles/run.dir/requires
 
-src/CMakeFiles/run.dir/clean:
-	cd /home/jagen31/Robotics/HotTarget/src && $(CMAKE_COMMAND) -P CMakeFiles/run.dir/cmake_clean.cmake
-.PHONY : src/CMakeFiles/run.dir/clean
+CMakeFiles/run.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/run.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/run.dir/clean
 
-src/CMakeFiles/run.dir/depend:
-	cd /home/jagen31/Robotics/HotTarget && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jagen31/Robotics/HotTarget /home/jagen31/Robotics/HotTarget/src /home/jagen31/Robotics/HotTarget /home/jagen31/Robotics/HotTarget/src /home/jagen31/Robotics/HotTarget/src/CMakeFiles/run.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : src/CMakeFiles/run.dir/depend
+CMakeFiles/run.dir/depend:
+	cd /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src /home/pierre/Robotics/OpenCV_Jared_Repo/HotTargets/src/CMakeFiles/run.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/run.dir/depend
 

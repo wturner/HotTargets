@@ -2,6 +2,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/run.dir/run.cpp.o"
   "CMakeFiles/run.dir/ImageAnalyzer.cpp.o"
   "CMakeFiles/run.dir/ScoreAnalyzer.cpp.o"
+  "CMakeFiles/run.dir/NetworkTable.cpp.o"
   "run.pdb"
   "run"
 )
