@@ -31,6 +31,7 @@ public Observer<Mat>
         {
             this->object_=object;
         }
+
         void update(Mat arg, void (*function)())
         {
             #ifdef DEBUG_ON

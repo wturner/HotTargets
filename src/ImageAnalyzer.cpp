@@ -22,7 +22,6 @@ Mat erase_contours (ImageAndContours features);
 
 Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
 {
-    cout<<"Made it to filter"<<endl;
     //Remove all colors outside of color range to get a binary image
     Mat thresh;
     if(obj->filterTwice())
@@ -48,7 +47,6 @@ Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
     //decrease size of blobs, remove ones that are not the right shape
     Mat erode = erode_image(blur, obj->get_kernel());
     #ifdef DEBUG_ON
-    cout<<"sdf"<<endl;
     imshow("debug",erode);
     waitKey(0);
     #endif
