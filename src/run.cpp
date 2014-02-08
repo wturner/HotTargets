@@ -1,11 +1,11 @@
 #include "ImageAnalyzer.hpp"
 #include<string.h>
+#include<opencv2/highgui/highgui.hpp>
 #include "ScoreAnalyzer.hpp"
 #include "ImageObjects.hpp"
 #include "ImageObject.hpp"
 #include "ImageGateway.hpp"
 #include<csignal>
-#include<opencv2/highgui/highgui.hpp>
 #include<opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include<iostream>
