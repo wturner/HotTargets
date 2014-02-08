@@ -1,11 +1,11 @@
 #include "ImageAnalyzer.hpp"
 #include<string.h>
+#include<opencv2/highgui/highgui.hpp>
 #include "ScoreAnalyzer.hpp"
 #include "ImageObjects.hpp"
 #include "ImageObject.hpp"
 #include "ImageGateway.hpp"
 #include<csignal>
-#include<opencv2/highgui/highgui.hpp>
 #include<opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include<iostream>
@@ -83,7 +83,6 @@ int cameraDisabled(char** argv)
 
     Mat imageBGR = imread(argv[2],CV_LOAD_IMAGE_COLOR);
     
-    waitKey(0);
     if(!imageBGR.data)
     {
         cout<<"Load fail"<<endl;
@@ -116,7 +115,6 @@ int cameraDisabled(char** argv)
 void searchImage(ImageAnalyzer* analyzer, ScoreAnalyzer* scorer, Mat image)
 {
     analyzer->run_filter(image);
-    
     scorer->calculate_scores(analyzer->get_image());
 }
 
