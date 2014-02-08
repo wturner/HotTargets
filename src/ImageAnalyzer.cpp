@@ -37,9 +37,10 @@ Mat ImageAnalyzer::run_checked_filter(Mat image,ImageObject* obj)
     else
         thresh = threshold_over_range(image,obj->get_lower_threshold(),obj->get_upper_threshold());
     //Blur image to blend close blobs
-    Mat blur = blur_image(thresh,6);
+    //Mat blur = blur_image(thresh,6);
     //decrease size of blobs, remove ones that are not the right shape
-    Mat erode = erode_image(blur, obj->get_kernel());
+    //Mat erode = erode_image(blur, obj->get_kernel());
+    Mat erode = erode_image(thresh, obj->get_kernel());
     //Get the remaining blobs from the image
     ImageAndContours contours = run_contour_search(erode);
     //Erase, from the blobs remaining, ones that are under a reasonable area
