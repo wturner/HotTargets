@@ -83,7 +83,6 @@ int cameraDisabled(char** argv)
 
     Mat imageBGR = imread(argv[2],CV_LOAD_IMAGE_COLOR);
     
-    waitKey(0);
     if(!imageBGR.data)
     {
         cout<<"Load fail"<<endl;
