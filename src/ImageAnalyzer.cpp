@@ -1,11 +1,11 @@
 #include"ImageAnalyzer.hpp"
 #include<opencv2/core/core.hpp>
+#include<opencv2/core/core_c.h>
 #include<opencv2/imgproc/imgproc.hpp>
-#include<opencv2/highgui/highgui.hpp>
+#include<opencv2/imgproc/imgproc_c.h>
 #include<iostream>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/highgui/highgui_c.h>
 using namespace std;
 using namespace cv;
 
@@ -114,7 +114,7 @@ Mat erase_contours_under_area(ImageAndContours features, int area)
     Mat dst = Mat::zeros(features.image.rows,features.image.cols,CV_8U);
     for(unsigned int i=0;i<features.contours.size();++i)
         if(contour_area_greater_than(features.contours[i],area)&&area>100)
-            drawContours(dst,features.contours,i,Scalar(225,225,225,225),CV_FILLED);
+            drawContours(dst,features.contours,i,Scalar(225,225,225,225), CV_FILLED);
     return dst;
 }
 
