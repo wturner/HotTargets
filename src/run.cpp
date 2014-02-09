@@ -40,8 +40,7 @@ int main(int argc, char** argv)
 
 VideoCapture capture()
 {
-
-    VideoCapture cap("rtsp://10.0.20.20/axis-media/media.amp"); // open the axis camera
+    VideoCapture cap("rtsp://10.0.20.11/axis-media/media.amp"); // open the axis camera
     if(!cap.isOpened())
       {  // check if we succeeded	
       printf("Unable to get camera.\n");
