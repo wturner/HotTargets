@@ -27,20 +27,27 @@ void searchImage(ImageAnalyzer* analyzer, ScoreAnalyzer* scorer, Mat image);
 
 int main(int argc, char** argv)
 {
-    if(argc>=2)
-        return cameraDisabled(argv);
+    if (argc>=3)
+      {
+      return cameraDisabled(argv);
+      }
+    if (argc<2)
+      {
+      cout << "Usage: " << argv[0] << " \"target\" [\"file\"] " << endl;
+      }
     return cameraEnabled(argv);
 }
 
 VideoCapture capture()
 {
 
-	VideoCapture cap("rtsp://192.168.0.100/axis-media/media.amp"); // open the axis camera
-    if(!cap.isOpened()){  // check if we succeeded	
-		printf("Unable to get camera.\n");
-		return -1;
-	}
-    exit(0);
+    VideoCapture cap("rtsp://10.0.20.20/axis-media/media.amp"); // open the axis camera
+    if(!cap.isOpened())
+      {  // check if we succeeded	
+      printf("Unable to get camera.\n");
+      exit(-1);
+      }
+    return cap;
 }
 
 int cameraEnabled(char** argv)
