@@ -112,7 +112,7 @@ bool contour_area_greater_than(vector<Point> contour, int area);
 Mat erase_contours_under_area(ImageAndContours features, int area)
 {
     Mat dst = Mat::zeros(features.image.rows,features.image.cols,CV_8U);
-    for(int i=0;i<features.contours.size();++i)
+    for(unsigned int i=0;i<features.contours.size();++i)
         if(contour_area_greater_than(features.contours[i],area)&&area>100)
             drawContours(dst,features.contours,i,Scalar(225,225,225,225),CV_FILLED);
     return dst;

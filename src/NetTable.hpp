@@ -1,17 +1,12 @@
-#ifndef NETWORK_TABLE_HPP
-#define NETWORK_TABLE_HPP
+#ifndef NET_TABLE_HPP
+#define NET_TABLE_HPP
 
 #include <iostream>
 #include <tables/ITable.h>
 #include <string>
 #include <nttools/NetworkTableTools.h>
 
-using namespace std;
-
-class NetworkTable{
-   
-   public:
-        namespace {
+namespace keys{
                 static const string redBallXKey = "redBallX";
                 static const string redBallYKey = "redBallY";
                 static const string redBallDetection = "redBallDetected";
@@ -28,9 +23,13 @@ class NetworkTable{
                 static const string verticalYKey = "verticalY";
                 static const string verticalDetection = "verticalDetected";
 
-        } 
+        }
 
-        string ipAdress;
+using namespace std;
+
+class NetTable {
+           public:
+        string ipAddress;
 
         string tableID;       
         
@@ -40,7 +39,11 @@ class NetworkTable{
         //sends the point
         void sendPoint(int x, int y, string key);
         void sendDetection(bool detected, string key);
-}
+        
+        void setIPAddress(string addr);
+        void openConnection();
+        
+};
 #endif
 
 //Argument Parser if ever needed

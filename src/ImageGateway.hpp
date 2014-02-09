@@ -30,7 +30,7 @@ public Observable<Mat>
                 processes[i].join(); 
             #endif*/
 
-            for(int i=0; i<observers_.size();++i)
+            for(unsigned int i=0; i < observers_.size();++i)
             {
                 ImageGateway::update_observer(observers_[i],image_);
             }

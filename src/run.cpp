@@ -58,8 +58,7 @@ int cameraEnabled(char** argv)
     if(strcmp(argv[1],"redball")==0){
         analyzer.set_object(red_ball);
         scorer.set_object(red_ball);
-    }
-    else if(strcmp(argv[1],"blueball")==0){
+    }else if(strcmp(argv[1], "blueball")==0){
         analyzer.set_object(blue_ball);
         scorer.set_object(blue_ball);
     }
@@ -133,8 +132,9 @@ void report_scores(ScoreAnalyzer scorer,char* findername)
 		cout << findername << " not found."	;
 	}
 
-	for(int i =0;i<scores.size();++i)
+	for(unsigned int i =0;i<scores.size();++i)
     {
         cout << "Match at: " << scores[i].position << endl;
     }
+
 }

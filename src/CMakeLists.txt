@@ -5,7 +5,7 @@ project(HotTargets)
 INCLUDE_DIRECTORIES(${NetworkTables_INC_DIR} ${NetworkTables_INC_DIR}/networktablesshim)
 set(NetworkTables_LIB_DIR "NetworkTables_LIB_DIR-NOT_FOUND" CACHE PATH "Directory containing library file")
 set(NetworkTables_INC_DIR "NetworkTables_INC_DIR-NOT_FOUND" CACHE PATH "Directory containing .f files")  
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -Werror -pthread -lrt -fPIC")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -pthread -lrt -fPIC")
 
 #Executable
 add_executable(run run.cpp ImageAnalyzer.cpp ScoreAnalyzer.cpp NetTable.cpp)

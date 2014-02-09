@@ -1,16 +1,24 @@
-#include <NetworkTable.hpp>
+#include <NetTable.hpp>
 
 using namespace std;
 
-NetworkTable::NetworkTable{
-         table = NetworkTableTools::GetClientTable(ipAdress, "Vision");       
+NetTable::NetTable{
+        ipAddress = "127.0.0.1";
 }
 
-NetworkTable::sendPoint(int x, int y, string key){
+NetTable::sendPoint(int x, int y, string key){
         table->PutNumber("X" + key, x);
         table->PutNumber("Y" + key, y);
 }
 
-NetworkTable::sendDetection(bool detected, string key){
+NetTable::sendDetection(bool detected, string key){
         table->PutBoolean(key, detected);
+}
+
+NetTable::setIPAddress(string addr){
+        ipAddress = addr;
+}
+
+NetTable::openConnection(){
+       table = NetworkTableTools::GetClientTable(ipAddress, "Vision");
 }
